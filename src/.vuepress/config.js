@@ -1,5 +1,4 @@
 module.exports = {
-  base: '/fireflydoc/',
   dest: 'docs',
   locales: {
     '/': {
