@@ -20,7 +20,7 @@
 |scan|callback:Function|打开扫描二维码界面|×|
 |share|options:Object,callback:Function|分享功能|×|
 |request|options:Object,callback:Function|url请求功能|×|
-|toast|options:Object|显示吐丝窗口|×|
+|toast|options:Object|显示吐司窗口|×|
 |openDApp|appid:String|打开其他DApp|×|
 |initWindow|options:Object|初始化当前界面的窗口|×|
 |impAccount|options:Object,callback:Function|导入账户|×|
