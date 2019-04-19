@@ -1,179 +1,180 @@
-## 示例
+## Example
 
-下面的连接，需要在钱包中打开。
-URL为https://t.cn/Re3xw6q
-添加方法：打开萤火钱包APP中的『探索』，点击右上角的图标，再次点击加号，输入名称，添加上述地址即可。返回『探索』页面，点击打开。
-源码见[这里](https://github.com/fchainio/firefly-examples/tree/master/dapp)
+You have to open below link in Firefly wallet.
+https://t.cn/Re3xw6q
+How to add: Choose 『Discovery』 in Firefly wallet, click the icon at the top right-hand corner, then click 『+』, input name and paste link above to make addition done. Return to 『Discovery』 to click the new added DAPP to open it.
+Source code is [here](https://github.com/fchainio/firefly-examples/tree/master/dapp)
 
-页面在萤火钱包中打开后，萤火钱包会注入FFW对象，可以使用window.FFW访问。可以根据此判断网页是否是在萤火内开启。
+FFW Object will be injected when you open the page in Firefly wallet, so you may know if this page is opend in wallet or not by checking the existence of windows.FFW object.
 
-## 启动APP开发者模式
-萤火钱包APP默认关闭了开发者模式，如果要开启，请打开"我的"-"设置"-"关于"，多次点击萤火图标，即可开启开发者模式
+## Enable dev mode
+Dev mode is not active by default, to activate it, click "My" - "Settings" - "About", click the firefly icon multiple times.
 
-## 使用萤火钱包APP调试
-打开"萤火钱包APP"，打开"探索"页，在右上角打开"+"号按钮，填写名称和应用访问地址，即可在"自定义应用"栏看到添加的应用，可以点击图标打开运行
-
-
-## 使用桌面设备调试
-Firefly桌面版本与移动版本功能一致，调试更加方便。除一些移动设备特定功能不能使用，如分享，扫描以外，等其它API均可进行测试。
-使用方法：
-点击导航栏『探索』，在自定义应用点击添加按钮。输入名称与应用地址后保存。
-点击添加的DApp，会自动弹出`Chrome developer tools`。
+## Debug using Firefly wallet
+Open 『Discovery』 page in Firefly wallet, click 『+』 at the top right-hand corner, input DAPP name and access link, then the new added DAPP is visible under "Custom Application" column. You can click the icon to open it.
 
 
-## 获取钱包版本信息
+## Debug using desktop device
+Firefly desktop version provides the same function with the mobile version, but with more convenient way to debug. You can test all APIs except some only available to mobile devices, like: scanning, sharing, etc.
+How to:
+Click 『Discovery』 in navigation bar, click add button in "Custom Applications", put in name and application access link then save.
+Click the new added DAPP, `Chrome developer tools` will pop up.
 
- 返回当前萤火钱包的版本信息，类型为字符串。如当前版本为 '2.1.8'。
+
+## Acquire version info about wallet
+
+ Return current version info of Firefly wallet, String type, like: '2.1.8'.
 
 ```
   window.FFW.version    
 ```
- 返回结果
+
+ Value returned
 
 ```
 '2.1.8'
 ```
 
-## 获取钱包OS平台信息
+## Acquire platform info of wallet OS
 
- 返回当前钱包所在设备的操作系统信息，类型为字符串，当前返回值为android或者ios。
+ Return the OS info of the device on which wallet rest, String type, like: Android or iOS.
 
 ```
 window.FFW.platform
 ```
 
- 返回结果
+ Value returned
 
 ```
 'android'
 ```
 
-## 获取当前设备的UUID
+## Acquire UUID of current device
 
- 返回当前钱包所在的设备的UUID进行SHA256运算后的数据，类型为字符串。
+ Return the UUID of current device(data after SHA256 operation), String type.
 
 ```
 window.FFW.uuid
 ```
 
- 返回结果
+ Value returned
 
 ```
 '01a0865f4c2687d90f70f32b01c1e258bfd7aa6c7ccc35339dfacd72f5018bb8'
 ```
 
-## 获取钱包的语言设置
+## Acquire the locale of wallet
 
- 返回当前钱包使用的语言选项，类型为字符串。
+ Return the locale value of current wallet, String type.
 
 ```
 window.FFW.locale
 ```
 
- 返回结果
+ Value returned
 
 ```
 'zh_cn'
 ```
 
-## 获取用户地址（ID）
+## Acquire user address(ID)
 
- 返回当前用户的地址，类型为字符串，如GCENG5GLJ35GPJZQM3YJSFL3GMQ57MA5U6ZAAE6V4XIFVXFPY5MS5Q65
+ Return current user address, String type, like: GCENG5GLJ35GPJZQM3YJSFL3GMQ57MA5U6ZAAE6V4XIFVXFPY5MS5Q65.
 
 ```
 window.FFW.address
 ```
 
- 返回结果
+ Value returned
 
 ```
 'GCENG5GLJ35GPJZQM3YJSFL3GMQ57MA5U6ZAAE6V4XIFVXFPY5MS5Q65'
 ```
 
-## 获取用户余额（balance）
+## Acquire user balance
 
-返回当前用户的资产信息。` balances(callback)`
-恒星网络可以发行资产。因此用户可以拥有多种资产。使用此方法可以获取当前用户所有的资产信息。
-此方法从钱包指定的horizon获取余额（balance）信息并返回。
+ Return the balance info of current user. ` balances(callback)`
+ You can issuer assets on Stellar network, so one user may have lots of different assets. You can get all assets info one user holds with this method.
+ This method get balance info from the horizon wallet appointed, and return.
 
-- 参数说明
-- `callback`是balance执行后的回调函数。可以是函数名称或者是一个函数。
+- Parameters description:
+- `callback` is the callback function after balance method gets executed, which could be a function name or a function.
 - https://www.stellar.org/developers/horizon/reference/endpoints/accounts-single.html
-- 在balance执行完毕后，`callback`将会接收一个对象，内容如下
+- After execution of balance is done, `callback` will welcome a object, content like below: 
 
 ```javascript
     {
-        code:  'success | fail',     //success表示查询成功，fail表示查询失败。
-        message:'提示信息 | 错误信息',
-        data: []     //Array类型。内容为用户的资产状态信息。
+        code: 'success | fail',     //success, assets info query ok; fail, assets info query fail.
+        message: 'notification info | error info',
+        data: []     //Array type. Content is assets info of current user.
      }
 ```
 
-> 代码示例
+> Code sample
 
 ```
 window.FFW.balances(function(response){
         if(response.code === 'fail'){
              console.log('error:' + response.message)  
-             alert('查询失败！'+response.message)
+             alert('Assets info query fail! '+response.message)
         }else{
              console.log('query for balances successfully')
              $("#balances_data").text(JSON.stringify(response.data))
-             alert('查询余额成功')
+             alert('Assets info query OK!')
         }
 });
 ```
 
-返回结果
+ Value returned
 
 ```
 [
     {
-      "balance": "1.0000000",       //资产余额
-      "limit": "707382697076.8900000",  //资产可持有的上限。通常在向用户发送时使用。
-      "asset_type": "credit_alphanum4",   //资产类型，分别为credit_alphanum4和credit_alphanum12. 
-      "asset_code": "XFF",        //资产代码
-      "asset_issuer": "GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF"   //资产发行方
+      "balance": "1.0000000",       //asset balance
+      "limit": "707382697076.8900000",  //upper limit of one asset that one user could hold
+      "asset_type": "credit_alphanum4",   //Type of asset, credit_alphanum4 or credit_alphanum12.
+      "asset_code": "XFF",        //code of the asset
+      "asset_issuer": "GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF"   //issuer of the asset
     },
     {
-      "balance": "1.9999900",   //资产余额
-      "asset_type": "native"       //native指代本地资产，即XLM
+      "balance": "1.9999900",   //balance
+      "asset_type": "native"       //native means native asset of Stellar network, XLM
     }
 ]
 ```
 
-## 支付功能（payment）
+## Payment
 
 
-`pay(data, callback)`
-使用该方法，可以提请用户进行指定支付。
-参数说明：
-`data`是一个JSON，需要包含以下内容
+ `pay(data, callback)`
+ You can pay specified amount of asset to other user with this method.
+ Parameters description:
+ `data` is a JSON, contents need to be like below:
 
 ```javascript
    {
-    destination: '接收方地址',  //字符串，必须填写
-    code: '资产编码',           //字符串，必须填写
-    issuer: '资产发行方',     //字符串，在发送原生资产XLM时，可不填写。其它资产均需要填写。
-    amount: '资产发送数量', // number类型, 必须填写 
-    memo_type: '备注类型', //字符串，选填，可取值：NONE TEXT HASH ID RETURN。 
-    memo: '备注内容'   //字符串，选填，当memo_type为NONE时，不需要填写，memo_type为其它值时，需要填写。
+    destination: 'reciever address',  //string, required
+    code: 'asset code',           //string, required
+    issuer: 'asset issuer',     //string, can only skip if sending XLM
+    amount: 'amount to send', // number, required
+    memo_type: 'type of memo', //string, optional, enum choices: NONE TEXT HASH ID RETURN
+    memo: 'memo content'   //string, optional, can only skip if memo_type is NONE, otherwise input corresponding value according to memo_type
    }
 ```
-关于`code`，`issuer`的概念，参见[stellar 官方文档](https://www.stellar.org/developers/guides/concepts/assets.html)，[中文版](https://docs.stellarcn.org/developers/guides/concepts/assets.html)。
-关于 `memo_type`和`memo`的概念，参见[这里](https://www.stellar.org/developers/guides/concepts/transactions.html#memo)，稍后会以汉语进行说明。
-`callback` 是payment执行后的回调函数，可以是函数名称或者是一个函数。
-在pay执行完毕后，`callback`将会接收一个对象，内容如下
+About the concept about `code` and `issuer`, you may refer to [stellar official document](https://www.stellar.org/developers/guides/concepts/assets.html), [Chinese version](https://docs.stellarcn.org/developers/guides/concepts/assets.html)
+About the concept about `memo` and `memo_type`, you may refer to [here](https://www.stellar.org/developers/guides/concepts/transactions.html#memo), later we will give an explain in plain english. 
+`callback` is the callback function after payment gets executed, which could be a function name or a function.
+After payment execution gets done, `callback` will welcome an object, content like below:
 
 ```javascript
     {
-        code:  'success | fail',     //success表示支付成功，fail表示支付失败。
-        message:'提示信息 | 错误信息',
-        data:'返回结果数据'     //object类型或null
+        code: 'success | fail',     //success, payment ok; fail, payment fail
+        message: 'notification info | error info',
+        data: 'result data returned'     //object or null
      }
 ```
 
-代码示例
+Code sample
 
 ```
 window.FFW.pay({
@@ -186,82 +187,82 @@ window.FFW.pay({
        }, function(response){
            if(response.code === 'fail'){
              console.log('error:' + response.message)  
-             alert('支付失败！'+response.message)
+             alert('Payment failed! '+response.message)
            }else{
              console.log('pay success')
-             alert('支付成功')
-             //后续代码
+             alert('Payment ok!')
+             //your business code goes here
            }
 });
 ```
 
-![调用界面](https://static.oschina.net/uploads/space/2018/0806/162145_Uid5_109284.png)
+![calling interface](https://static.oschina.net/uploads/space/2018/0806/162145_Uid5_109284.png)
 
-## 路径支付功能（path payment)
+## Pathpayment
 
 
 WIP...
 
-## 使用用户当前密钥签名（sign)
+## Using secret key of current user to sign
 
 
-` sign(data, callback)` 
-使用该方法可以对数据进行签名，可以用于权限验证，比如应用可以在执行某些需要验证用户身份的操作之前，提供一些数据让用户进行签名鉴权。可以用来做用户登录。
-参数说明：
-`data`是一个JSON格式的字符串。data 的长度限制（WIP）
-`callback` 是sign执行后的回调函数，可以是函数名称或者是一个函数。
-在`sign`执行完毕后，`callback`将会接收一个对象，内容如下
+ ` sign(data, callback)` 
+ You may use this method to sign your data, which will be verified. Scenarios include: Application will get user identity by verifying the data signed by the same user, then may allow user to login application.
+ Paramenters description:
+ `data` is a string of JSON format. The length limit of data (WIP)
+ `callback` is the callback function after sign gets executed, which could be a function name or function.
+ After `sign` execution gets done, `callback` will welcome an object, content like below:
 
 ```javascript
     {
-        code:  'success | fail',     //success表示签名成功，fail表示签名失败。
-        message:'提示信息 | 错误信息',
-        data:'返回结果数据'     //base64编码字符串类型或null
+        code: 'success | fail',     //success, means sign ok; fail, means sign failed
+        message: 'notification info | error info',
+        data: 'result data returned'     //base64 encode string or null
      }
 ```
 
 
-代码示例
+Code sample
 
 ```
 let data = {name: 'firefly wallet dapp',desc:'the first hello in the world'}
 data = JSON.stringify(data)
-console.log('待签名的数据:' +data)
+console.log('The data to sign:' +data)
 window.FFW.sign(data, function(response){
     if(response.code === 'fail'){
         console.log('error:' + response.message)  
     }else{
         console.log('success')
-        console.log('签名后的结果：'+response.data)
+        console.log('The result data after signing: '+response.data)
     }
 })
 ```
 
-返回结果
+ Value returned
 
 ```
-待签名的数据:{"time":1533626528508,"address":"GACJFMOXTSE7QOL5HNYI2NIAQ4RDHZTGD6FNYK4P5THDVNWIKQDGOODU"}
-签名后的结果:4foYmY0Nrx1QPT5CfJEsJcYM0o40l4sHDo8aHJ0mHNq0ZY9Q7753FieHXBK3dJJ32+Lhw3UIJnzF2pplyo3LBg==
+The data to sign:{"time":1533626528508,"address":"GACJFMOXTSE7QOL5HNYI2NIAQ4RDHZTGD6FNYK4P5THDVNWIKQDGOODU"}
+The result data after signing:4foYmY0Nrx1QPT5CfJEsJcYM0o40l4sHDo8aHJ0mHNq0ZY9Q7753FieHXBK3dJJ32+Lhw3UIJnzF2pplyo3LBg==
 
 ```
 
-## 验证签名（validate)
+## Validate signature
 
 WIP...
 
-## 提请用户信任资产（trust）
+## Let user trust asset
 
 
-`trust(code, issuer, callback)`
-使用该方法，可以提请用户信任指定的资产。
-参数说明：
-`code`格式为字符串。内容为字母数字，即[a-z][A-Z][0-9]，长度限制为1-12字符。
-`issuer`格式为字符串，内容为地址。如`GCKKUWHT3ILQWWKQ3MUOCAC7LRJNLCOES7SEI6TCQVGZD4GCULO2PGNU`。
-`callback` 是trust执行后的回调函数，可以是函数名称或者是一个函数。
-在`trust`执行完毕后，`callback`将会接收一个对象，内容如下
+ `trust(code, issuer, callback)`
+ User may trust specified asset with this method.
+ Parameters description:
+ `code` is string, whose content should be alphanumeric code, a.k.a [a-z][A-Z][0-9]. Lenght is 1-12 characters.
+ `issuer` is string, whose content is stellar address, like: `GCKKUWHT3ILQWWKQ3MUOCAC7LRJNLCOES7SEI6TCQVGZD4GCULO2PGNU`.
+ `callback` is the callback function after trust gets executed, which could be a function name or function.
+ After `trust` execution gets done, `callback` will be expecting an object, content like below:
 
 
-代码示例
+Code sample
 
 ```
 var code = 'XFF';
@@ -269,113 +270,113 @@ var issuer = 'GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF';
 window.FFW.trust(code,issuer,function(response){
    if(response.code === 'fail'){
     console.log('error:' + response.message)  
-       alert('授信失败')
+       alert('Trust failed')
     }else{
        console.log('trust success')
-       alert('授信成功')
+       alert('Trust OK')
     }
 })
 ```
 
-![调用界面](https://static.oschina.net/uploads/space/2018/0808/003018_3Kcb_109284.png)
+![calling interface](https://static.oschina.net/uploads/space/2018/0808/003018_3Kcb_109284.png)
 
-## 请求用户签署XDR（signXDR）
+## Ask user to sign XDR
 
 
-` signXDR(data, message, callback)`
-`signXDR`是一个底层方法。当Firefly提供的API无法直接满足需求时，可以使用此方法进行高级操作。
-使用前提：需要了解恒星底层SDK，能够手工构造Transaction封包。当构造并生成XDR格式的tranaction后，可以提请用户对Tx进行签名，签名后提交到网络。
-参数说明：
-`data` 字符串，构造的XDR格式的transaction。
-~~`message` 字符串，用于告知用户此Tx的用途。~~
-`callback` 是signXDR执行后的回调函数，可以是函数名称或者是一个函数。
+ ` signXDR(data, message, callback)`
+ `signXDR` is a underlying method. You may perform advanced operation if API provided by Firefly wallet can not meet your requirement.
+ Prerequisite: You have to understand the underlying SDK of Stellar, which requires you to be able to create a Transaction package manually. You would have to sign the Transaction which you created in XDR format, then submit it to horizon.
+ Parameters description:
+ `data` is string, the Transaction you created in XDR format.
+ ~~`message` is string, used to tell others the usage of this Transaction.~~
+ `callback` is the callback function after signXDR gets executed, which could be a function name or function.
 
-在`signXDR`执行完毕后，`callback`将会接收一个对象，内容如下
+ After `signXDR` execution gets done, `callback` will be expecting an object, content like below:
 
 ```javascript
     {
-        code:  'success | fail',     //success表示签署成功，fail表示签署失败。
-        message:'提示信息 | 错误信息',
-        data:'返回结果数据'     //base64编码字符串类型或null
+        code:  'success | fail',     //success, means signXDR ok; fail, means signXDR failed
+        message:'notification info | error info',
+        data:'Result data returned'     //base64 encoded string or null
      }
 ```
 
-*代码示例*
+Code sample
 
 ```
 var xdr = 'AAAAAEpng8wi7nIqz02/1bmC4I5jzz763WoadKIWy7M5MVc3AAAAZACHjkkAAAABAAAAAAAAAAAAAAABAAAAAAAAAAoAAAALaG9tZV9kb21haW4AAAAAAQAAABBodHRwOi8vZmNoYWluLmlvAAAAAAAAAAA='
- window.FFW.signXDR(xdr, "更新主域名", function(response){
+ window.FFW.signXDR(xdr, "update domain name", function(response){
   if(response.code === 'fail'){
     console.log('error:' + response.message)  
-    alert('签名失败！'+response.message)
+    alert('signXDR Failed!'+response.message)
   }else{
-    console.log('签名成功,数据可以直接提交到Horizon')
+    console.log('signXDR OK, you can submit data to Horizon now!')
     console.log(response.data)
   }
 })
 ```
 
-![调用界面](https://static.oschina.net/uploads/space/2018/0808/005124_ty0v_109284.png)
+![calling interface](https://static.oschina.net/uploads/space/2018/0808/005124_ty0v_109284.png)
 
-## 扫描二维码功能（scan）
+## QR Scan
 
 
-`scan(callback) `
-使用该方法可以调用扫描功能，并获取二维码扫描结果。
-参数说明：
-`callback` 是scan执行后的回调函数，可以是函数名称或者是一个函数。
-在`scan`执行完毕后，`callback`将会接收一个对象，内容如下
+ `scan(callback) `
+ You can scan QR code and get the result with this method.
+ Parameters description:
+ `callback` is the callback function after scan gets executed, which could be a function name or function.
+ After `scan` execution gets done, `callback` will be expecting an object, content like below:
 ```javascript
     {
-        code:  'success | fail',     //success表示签署成功，fail表示签署失败。
-        message:'提示信息 | 错误信息',
-        data:'返回结果数据'     //字符串类型或null
+        code:  'success | fail',     //success, means scan ok; fail, means scan failed
+        message:'notification info | error info',
+        data:'result data returned'     //string or null
      }
 ```
 
-代码示例
+Code sample
 
 ```
 window.FFW.scan(function(response){
   if(response.code === 'fail'){
     console.log('error:' + response.message)  
   }else{
-     console.log('scan result:' + response.data)//response.data是二维码的扫描结果，字符串类型
+     console.log('scan result:' + response.data)//response.data is the result of the scanned QR code, string
   }
  })
   
 ```
 
-## 分享功能（share)
+## Social share
 
-`share(options,callback)`
-使用此方法，可以调用系统的分享功能。分享实现见[这里](https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin)
+ `share(options,callback)`
+ You can leverage share function of the device with this method. The implement is [here](https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin)
 
-`options`是一个JSON，需要包含以下内容
+ `options` is a JSON, needs to have below content:
 
-`分享功能`
+`share`
 ```javascript
    {
-    message: '分享图片',  //字符串，必须填写
-    url: 'https://fchain.io',//字符串类型，选填，要分享的网址
-    files: ['图片内容'],           //数组，选填，支持远程图片地址或base64格式的图片等。如
+    message: 'picture share',  //string, required
+    url: 'https://fchain.io',//string, optional, the url you want to share
+    files: ['picture content'],           //Array, optional, supports remote picture urls or picture data in base64 format
    }
 ```
 
-`callback` 是share执行后的回调函数，可以是函数名称或者是一个函数。
-在`share`执行完毕后，`callback`将会接收一个对象，内容如下
+`callback` is the callback function after share gets executed, which could be a function name or function.
+After `share` execution gets done, `callback` will be expecting an object, content like below:
 ```javascript
     {
-        code:  'success | fail',     //success表示成功，fail表示失败。
-        message:'提示信息 | 错误信息'
+        code:  'success | fail',     //success, means share ok; fail, means share failed
+        message:'notification info | error info'
     }
 ```
 
-代码示例
+Code sample
 
 ```
 let options = {
-   message: '分享图片',
+   message: 'picture share',
    files: ['data:image/png;base64,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']
 }
 window.FFW.share(options,function(response){
