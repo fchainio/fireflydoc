@@ -1,19 +1,19 @@
 module.exports = [
   {
     text: 'Guide',
-    link: '/guide/',
+    link: '/en/guide/',
   },
   {
     text: 'JS API',
-    link: '/jsapi/'
+    link: '/en/jsapi/'
   },
   {
     text: 'URL Schema',
-    link: '/urlschema/'
+    link: '/en/urlschema/'
   },
   {
     text: 'Stellar',
-    link: '/stellar/',
+    link: '/en/stellar/',
   },
   {
     text: 'JS SDK',

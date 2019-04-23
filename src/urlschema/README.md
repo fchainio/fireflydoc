@@ -29,7 +29,7 @@
 |打开DAPP|XFF|√|
 |打开币红包|XFF|√|
 |领取币红包|XFF|√|
-|查看红包记录、发红包|XFF|×|
+|查看红包记录、发红包|XFF|√|
 |打开某个资产详情|XFF|√|
 |扫码登陆|https|√|
 
@@ -102,7 +102,7 @@ xff://open.fchain.io/market/addpair?basecode=XLM&baseissuer=&countercode=XCN&cou
 |counterissuer|string|true|counter发行方 可为空|
 ---
 
-# Dapp
+## Dapp
 ## 探索Tab打开Dapp信息页
 - 协议URL 
     - xff://open.fchain.io/discovery/dappinfo
