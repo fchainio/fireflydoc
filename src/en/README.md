@@ -1,22 +1,22 @@
 ---
 home: true
-actionText: 开始 →
+actionText: Start →
 actionLink: /guide/
 footer: MIT Licensed | Copyright © 2019-present fchain.io
 ---
 
-## 介绍
+## Introduction
 
-萤火钱包是基于恒星网络的去中心化钱包，支持安卓、IOS、桌面平台
-萤火钱包(1.x-2.1.x)为开源项目，开源协议为MIT，禁止用于商业活动，可以访问[github](https://github.com/fchainio/firefly)获取源码
+Firefly wallet is a decentralized wallet based on Stellar network, which supports Android, iOS and desktop platform.
+Firefly wallet(1.x-2.1.x) is an open source project using MIT protocol, which is not allowed to be used in any commercial activities, you can get the source code from [github](https://github.com/fchainio/firefly)
 
-萤火钱包v2.x开放了第三方DAPP接口，让开发者可以开发自己的DAPP，为用户提供更多的选择和功能。
+Firefly wallet v2.x provides third party DAPP interface to enable developers to create their own DAPP, which brings more choices and features to end users.
 
 
 
-### 应用开发流程
-* DAPP为标准的webapp工程，开发者可以选择自己熟悉的相关技术栈构建项目
-* 不需要引用萤火钱包的任何代码
-* 在DAPP初始加载整个界面后，萤火钱包会在当前界面注入SDK代码，当前DAPP需要监听window.FFW对象是否存在，当window.FFW对象存在时，即可从中获取相应的地址和接口等
-* 开发者打开萤火钱包APP中的『轻应用』，点击右上角的图标，可以添加自己本地的地址，在萤火钱包中进行测试
-* 开发者也可以下载[萤火钱包源码](https://github.com/fchainio/firefly)，编译运行后，运行安卓或IOS模拟器进行测试
+### Application development procedure
+* DAPP is a standard webapp project, developers can make use of any related technology stack of their choices to build a project.
+* There is no need to import any codes from Firefly wallet.
+* After DAPP finished loading the interface for the first time, Firefly wallet will inject SDK code to current interface, current DAPP need to check if window.FFW object exists, from which you can get corresponding address and api, etc. 
+* Developers can add localhost and perform test in Firefly wallet by openning 『light application』 in Firefly wallet and clicking the icon at the top right-hand corner.
+* Developers can also choose to use android or iOS simulator to perform test after downloading and compiling [Firefly wallet source code](https://github.com/fchainio/firefly).

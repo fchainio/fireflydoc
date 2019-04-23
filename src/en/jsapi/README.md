@@ -1,95 +1,95 @@
-## JS Bridge接口协议
+## JS Bridge protocol
 
-钱包给JS（即DAPP）提供的原生能力
+The native ablility that wallet offered to DAPP
 
-- 取消back recovery两个接口
+- cancel back recovery two apis
 
-## 通过npm引用帮助类库
-- 可以通过[fireflywallet-api](https://github.com/imloama/fireflywallet-api)，通过NPM或yarn引入，调用以下接口
+## import via npm
+- Via NPM or yarn, import[fireflywallet-api](https://github.com/imloama/fireflywallet-api)
 
 
-### 所有接口函数说明
-|函数名|参数|函数说明|是否收费|
+### All API function description
+|function name|parameters|description|chargeable|
 |:---- |:---- |:---- |:---- |
-|balances|callback:Function|返回当前登陆账户的余额|×|
-|sign|data:Object,callback:Function|对JSON格式的data数据进行签名|×|
-|pay|data:Object,callback:Function|支付功能，将提交的hash结果返回|×|
-|pathPayment|data:Object,callback:Function|路径支付，将提交的hash结果返回|×|
-|trust|code:String,issuer:String,callback:Function|授信资产，将授信结果返回|×|
-|signXDR|data:String,callback:Function|XDR签名|×|
-|scan|callback:Function|打开扫描二维码界面|×|
-|share|options:Object,callback:Function|分享功能|×|
-|request|options:Object,callback:Function|url请求功能|×|
-|toast|options:Object|显示吐丝窗口|×|
-|openDApp|appid:String|打开其他DApp|×|
-|initWindow|options:Object|初始化当前界面的窗口|×|
-|impAccount|options:Object,callback:Function|导入账户|×|
-|getTradePairs|options:Object,callback:Function|获取交易分组和交易对|√|
-|addTradeGroup|options:Object,callback:Function|新增交易分组|√|
-|openKLine|options:Object,callback:Function|打开交易行情K线|√|
-|addTradePair|options:Object,callback:Function|新增交易对，指定分组，只能添加到其他分组|√|
-|addContact|options:Object,callback:Function|添加联系人|×|
-|deposite|options:Object,callback:Function|充币|√|
-|withdraw|options:Object,callback:Function|提币|√|
-|setInflationPool|options:Object,callback:Function|设置通胀池|√|
-|openRedPocket|options:Object,callback:Function|打开币红包|×|
-|sendRedPocket|options:Object,callback:Function|发币红包|×|
+|balances|callback:Function|return balance of current account|×|
+|sign|data:Object,callback:Function|sign data in JSON format|×|
+|pay|data:Object,callback:Function|payment, return hash value result|×|
+|pathPayment|data:Object,callback:Function|pathpayment, return hash value result|×|
+|trust|code:String,issuer:String,callback:Function|trust asset, return result|×|
+|signXDR|data:String,callback:Function|sign XDR|×|
+|scan|callback:Function|open qr code scan page|×|
+|share|options:Object,callback:Function|share|×|
+|request|options:Object,callback:Function|url request|×|
+|toast|options:Object|show toast window|×|
+|openDApp|appid:String|open DAPP|×|
+|initWindow|options:Object|initialize current window|×|
+|impAccount|options:Object,callback:Function|import account|×|
+|getTradePairs|options:Object,callback:Function|get trade groups and pairs|√|
+|addTradeGroup|options:Object,callback:Function|add new trade group|√|
+|openKLine|options:Object,callback:Function|open trade quote k line|√|
+|addTradePair|options:Object,callback:Function|add trade pair, specify group, can only add to other groups|√|
+|addContact|options:Object,callback:Function|add contact|×|
+|deposite|options:Object,callback:Function|deposite|√|
+|withdraw|options:Object,callback:Function|withdraw|√|
+|setInflationPool|options:Object,callback:Function|set inflation pool|√|
+|openRedPocket|options:Object,callback:Function|open red pocket|×|
+|sendRedPocket|options:Object,callback:Function|send red pocket|×|
 
 
 
 
-## 接口代码整理说明
+## Interface description
 ```
 /**
- * 接口根对象
+ * Interface root object
  */
 window.FFW = {
 
   /**
-   * 当前钱包版本号（v2.1.0添加，未正式上线）
+   * current wallet version number(added in v2.1.0)
    */
   version:'2.2.6',
   /**
-   * 当前钱包的操作系统，ios或android，（v2.1.0添加）
+   * current wallet OS, iOS or android(added in v2.1.0)
    */
   platform: 'ios',
 
   /**
-   * 属性，String类型
-   * 当前打开DAPP的钱包的登陆账户公钥地址
+   * attribute, String
+   * public key address for current logged in account
    */
   address: 'GCENG5GLJ35GPJZQM3YJSFL3GMQ57MA5U6ZAAE6V4XIFVXFPY5MS5Q65',
   /**
-   * 属性，Array类型
-   * 当前打开DAPP的钱包的联系人信息
-   * 2.4版本后取消
+   * attribute, Array
+   * Contacts info
+   * canceled since 2.4
    */
   contacts: [],
 
   /**
-   * 属性，Array类型
-   * 当前打开DAPP的钱包的地址簿
-   * 2.4版本后取消
+   * attribute, String
+   * Address book
+   * canceled since 2.4
    */
   myaddresses: [],
   
  /**
-  * 当前设备的UUID信息，针对该信息进行了加密后提供出来的
+  * UUID encrypted
   */
-  uuid = '设备的UUID信息加密信息',
+  uuid = 'UUID encrypted',
 
  /**
-  * 当前钱包的语言设置
+  * locale of current wallet
   */
   locale = 'zh_cn';
 
    /**
-   * 查询账户余额
-   * @param callback: function类型，接收参数为response,
+   * acquire balance
+   * @param callback: function type, expecting parameter response
    * {
-   *   code: 'success或fail', 
-   *   message: '提示信息或错误信息', 
-   *   data: Array类型，数据来自于account的balances属性，见https://www.stellar.org/developers/horizon/reference/endpoints/accounts-single.html中account的balances属性
+   *   code: 'success or fail', 
+   *   message: 'notification or error', 
+   *   data: Array, data from balances attribute of account, check https://www.stellar.org/developers/horizon/reference/endpoints/accounts-single.html
    * }
    */
    balances(callback){
@@ -97,24 +97,24 @@ window.FFW = {
    };
 
   /**
-   * 支付方法
-   * @param {Object} data 参数
+   * payment method
+   * @param {Object} data parameter
    *  data: {
-   *    destination: '接收方的公钥G地址', 
-   *    code: '资产编码', 
-   *    issuer: '资产发行方', 
-   *    amount: '资产发送数量，number类型', 
-   *    memo_type: '备注类型，可取值：NONE TEXT HASH ID RETURN', 
-   *    memo: '备注'
+   *    destination: 'reciever stellar address', 
+   *    code: 'asset code', 
+   *    issuer: 'asset issuer', 
+   *    amount: 'amount, number', 
+   *    memo_type: 'memo type, could be: NONE TEXT HASH ID RETURN', 
+   *    memo: 'memo content'
    *  }
-   * @param {string,function} callback 回调函数，可以是函数名称也可以是函数，
-   *      回调函数接收一个对象
+   * @param {string,function} callback function
+   *      callback expects an object
    *        {
-   *            code:'可取fail或success,false表示失败，success表示处理成功',
-   *            message:'提示信息',
-   *            data:'返回结果数据，是object类型，可能为null'
+   *            code:'fail or success',
+   *            message:'notification message',
+   *            data:'result returned, object or null'
    *          }
-   * 示例：
+   * Example:
    *   FFW.pay({
    *      destination: 'GBFGPA6MELXHEKWPJW75LOMC4CHGHTZ67LOWUGTUUILMXMZZGFLTO3X7', 
    *      code: 'XFF', 
@@ -135,24 +135,24 @@ window.FFW = {
   },
 
   /**
-   * 路径支付方法
-   * @param {Object} data 参数
+   * pathpament method
+   * @param {Object} data parameter
    *  data: {
-   *    destination: '接收方的公钥G地址', 
-   *    code: '资产编码', 
-   *    issuer: '资产发行方', 
-   *    amount: '资产发送数量，number类型', 
-   *    memo_type: '备注类型，可取值：NONE TEXT HASH ID RETURN', 
-   *    memo: '备注'
+   *    destination: 'reciever stellar address', 
+   *    code: 'asset code', 
+   *    issuer: 'asset issuer', 
+   *    amount: 'amount, number', 
+   *    memo_type: 'memo type, could be: NONE TEXT HASH ID RETURN', 
+   *    memo: 'memo content'
    *  }
-   * @param {string或function} callback 回调函数，可以是函数名称也可以是函数
-   *      回调函数接收一个对象
+   * @param {string或function} callback
+   *      callback expects an object
    *        {
-   *            code:'可取fail或success,false表示失败，success表示处理成功',
-   *            message:'提示信息',
-   *            data:'返回结果数据，是object类型，可能为null'
+   *            code:'fail or success',
+   *            message:'notification message',
+   *            data:'result returned, object or null'
    *          }
-   * 示例：
+   * Example:
    *   FFW.pathPayment({
    *      destination: 'GBFGPA6MELXHEKWPJW75LOMC4CHGHTZ67LOWUGTUUILMXMZZGFLTO3X7', 
    *      code: 'XFF', 
@@ -173,16 +173,16 @@ window.FFW = {
   },
 
   /**
-   * 对数据进行签名，主要是针对一些数据进行签名，方便后台应用确认当前操作人员具有账户的权限，防止恶意请求
-   * @param {String} data 要进行签名的数据，必须为json数据类型，然后转为String格式，由于json数据转到后台之后，要保证后台取的json数据和前台的json数据格式字段顺序一致，否则会校验失败
-   * @param {string或function} callback 回调函数，可以是函数名称也可以是函数
-   *      回调函数接收一个对象
+   * sign data to make backend application have confident that the operator has appropriate access to the account
+   * @param {String} data to sign, JSON, then convert to String, which needs to keep order, otherwise verification will fail.
+   * @param {string或function} callback
+   *      callback expects an object
    *        {
-   *            code:'可取fail或success,false表示失败，success表示处理成功',
-   *            message:'提示信息',
-   *            data:'返回结果数据，是string类型，返回签名完成后数据的base64结果'
+   *            code:'fail or success',
+   *            message:'notification message',
+   *            data:'data returned, string, encoded in base64'
    *          }
-   *    示例：
+   *    Example:
    *    let data = {name: 'firefly wallet dapp'}
    *    data = JSON.stringify(data)
    *    FFW.sign(data, function(response){
@@ -190,7 +190,7 @@ window.FFW = {
    *          console.log('error:' + response.message)  
    *        }else{
    *          console.log('do success')
-   *          console.log('对{name: "firefly wallet dapp"}签名后的结果：'+response.data)
+   *          console.log('The result after signing {name: "firefly wallet dapp"} :'+response.data)
    *        }
    *    })
    */
@@ -199,24 +199,24 @@ window.FFW = {
   },
 
   /**
-   * 针对transaction生成的xdr进行签名，生成可提交到horizon的transaction xdr
-   * @param {string} data 必须为transaction生成的xdr 
-   * @param {String} message 提示信息
-   * @param {string或function} callback ,回调函数，可以是函数名称也可以是函数
-   *      回调函数接收一个对象
+   * sign xdr for transaction
+   * @param {string} data, xdr generated for transaction
+   * @param {String} message
+   * @param {string或function} callback
+   *      callback expects an object
    *        {
-   *            code:'可取fail或success,false表示失败，success表示处理成功',
-   *            message:'提示信息',
-   *            data:'返回结果数据，是string类型，返回签名完成后transaction对应的xdr'
+   *            code:'fail or success',
+   *            message:'notification message',
+   *            data:'data returned, string, result xdr after signing it'
    *          }
-   * 示例：
+   * Example:
    *   let xdr = 'AAAAAEpng8wi7nIqz02/1bmC4I5jzz763WoadKIWy7M5MVc3AAAAZACHjkkAAAABAAAAAAAAAAAAAAABAAAAAAAAAAoAAAALaG9tZV9kb21haW4AAAAAAQAAABBodHRwOi8vZmNoYWluLmlvAAAAAAAAAAA='
    *   FFW.signXDR(xdr, function(response){
    *        if(response.code === 'fail'){
    *          console.log('error:' + response.message)  
    *        }else{
    *          console.log('do success')
-   *          console.log('对XDR签名后的XDR结果：'+response.data)
+   *          console.log('XDR result after signing XDR :'+response.data)
    *        }
    *    })
    */
@@ -224,22 +224,22 @@ window.FFW = {
     // code
   },
   /**
-   * 2.4版本后取消
-   * 备份数据，备份当前用户的contact和myaddress
-   * @param {string或function} callback 回调函数，可以是函数名称也可以是函数
-   *      回调函数接收一个对象
+   * canceled since 2.4
+   * backup data, including contacts and address book
+   * @param {string或function} callback
+   *      callback expects an object
    *        {
-   *            code:'可取fail或success,false表示失败，success表示处理成功',
-   *            message:'提示信息',
-   *            data:'返回结果数据，是string类型，返回对contact和myaddress加密后的数据,可以直接保存该结果到系统中'
+   *            code:'fail or success',
+   *            message:'notification message',
+   *            data:'data returned, string, encrypted'
    *          }
-   * 示例：
+   * Example:
    *   FFW.backup(function(response){
    *        if(response.code === 'fail'){
    *          console.log('error:' + response.message)  
    *        }else{
    *          console.log('do success')
-   *          console.log('加密后的备份数据：'+response.data)
+   *          console.log('Backup data encrypted:'+response.data)
    *        }
    *    })
    */
@@ -248,17 +248,17 @@ window.FFW = {
   },
 
   /**
-   * 2.4版本后取消
-   * 恢复数据函数，根据backup函数加密备份后的数据，重新恢复到当前钱包中进行覆盖
+   * canceled since 2.4
+   * recovery data, from data encrypted by backup function, overwrite to current wallet
    * @param {string} data 
-   * @param {string或function} callback 回调函数，可以是函数名称也可以是函数
-   *      回调函数接收一个对象
+   * @param {string或function} callback
+   *      callback expects an object
    *        {
-   *            code:'可取fail或success,false表示失败，success表示处理成功',
-   *            message:'提示信息'
+   *            code:'fail or success',
+   *            message:'notification message'
    *          }
-   * 示例：
-   *   //其中，data是backup备份操作后拿到的数据
+   * Example
+   *   //notice, here is the backup data
    *   FFW.recovery(data,function(response){
    *        if(response.code === 'fail'){
    *          console.log('error:' + response.message)  
@@ -271,16 +271,16 @@ window.FFW = {
     //code
   },
   /**
-   * 授信资产
-   * @param {string} code 资产编码
-   * @param {string} issuer 资产发行方 
-   * @param {string或function} callback 回调函数，可以是函数名称，也可以是函数
-   *      回调函数接收一个对象
+   * Trust asset
+   * @param {string} code
+   * @param {string} issuer 
+   * @param {string或function} callback
+   *      callback expects an object
    *        {
-   *            code:'可取fail或success,false表示失败，success表示处理成功',
-   *            message:'提示信息'
+   *            code:'fail or success',
+   *            message:'notification message'
    *          }
-   * 示例：
+   * Example:
    *   let code = 'XFF';
    *   let issuer = 'GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF';
    *   FFW.trust(code,issuer,function(response){
@@ -296,13 +296,13 @@ window.FFW = {
   }
 
  /**
-  * 打开二维码扫描功能，接收回调函数，用于接收二维码的扫描结果
-  * 示例：
+  * Scan QR code to get result scanned.
+  * Example:
   *   FFW.scan(function(response){
   *        if(response.code === 'fail'){
   *          console.log('error:' + response.message)  
   *        }else{
-  *          console.log('scan result:' + response.data)//response.data是二维码的扫描结果，字符串类型
+  *          console.log('scan result:' + response.data)//response.data is the scanning result, string
   *        }
   *    })
   */ 
@@ -311,18 +311,18 @@ window.FFW = {
   }
 
   /**
-   * 调用共享功能，具体的分享实现见：https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin
-   * @param {Object} options 设置参数
-   * @param {string或function} callback 回调函数，可以是函数名称，也可以是函数
-   *      回调函数接收一个对象
+   * Share, implementation detail: https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-PluginShare
+   * @param {Object} options
+   * @param {string或function} callback
+   *      callback expects an object
    *        {
-   *            code:'可取fail或success,false表示失败，success表示处理成功',
-   *            message:'提示信息'
+   *            code:'fail or success',
+   *            message:'notification message'
    *          }
-   * 示例：
+   * Example:
    *   let options = {
-   *      message: '分享图片',
-   *      files: ['data:image/png;base64,iVBORw0......K5CYII='], //图片，支持远程图片或base64格式的图片等
+   *      message: 'Share picture',
+   *      files: ['data:image/png;base64,iVBORw0......K5CYII='], //remote picture url or data in base64 format
    *     };
    *   FFW.share(options,function(response){
    *        if(response.code === 'fail'){
@@ -337,22 +337,22 @@ window.FFW = {
   }
 
   /**
-   * 调用原生的HTTP请求
-   * @param {Object} config 请求参数
-   * 示例：
+   * call native HTTP request
+   * @param {Object} config
+   * Example:
    * {
-   *    timeout: int 超时时间，默认5秒
-   *    url: String 请求的URL地址
-   *    method: String 请求方式，GET或POST
+   *    timeout: int 5s default
+   *    url: String URL address
+   *    method: String GET or POST
    *    content-type: String
-   *    headers: Object，header参数
+   *    headers: Object，header parameter
    * }
-   * @param {Function} callback 回调函数
-   * 示例：
+   * @param {Function} callback
+   * Example:
    *  function(response){
-   *    var statusCode = response.statusCode;//200是正常返回
-   *    var responseText = response.responseText;//返回的内容，String类型
-   *    var headers = response.headers;//返回的头部信息，Object类型
+   *    var statusCode = response.statusCode;//200 is normal return
+   *    var responseText = response.responseText;//content returned, String
+   *    var headers = response.headers;//head info, Object
    *  }
    */
   request(config,callback){
@@ -360,12 +360,12 @@ window.FFW = {
   }
 
   /**
-   * 显示原生toast提示信息
-   * @param {Object} config 配置信息
-   * 示例：
+   * navite toast notification message
+   * @param {Object} config
+   * Example:
    * {
-   *     "long":true/false,//是显示为长时间toast，还是短时间toast
-   *     "msg":String //toast显示的内容
+   *     "long":true/false,//showing long or short time toast
+   *     "msg":String //content in toast
    * }
    *
    */
@@ -374,8 +374,8 @@ window.FFW = {
   }
 
   /**
-   * 跳转到其他的DAPP中
-   * @param {String} 其他dapp的dappid的值
+   * Open DAPP
+   * @param {String} dappid of DAPP
    * 
    */
   openDApp(dappid){
@@ -383,15 +383,15 @@ window.FFW = {
   }
 
   /**
-   * 初始化窗口界面
-   * @param {Object} config 配置信息
-   * 示例：
+   * Initialize window
+   * @param {Object} config
+   * Example:
    * {
-   *   "navigationBarBackgroundColor":"#ffffff", //String 导航栏的背景色
-   *   "navigationBarTextStyle":"black or white" //String 导航栏的字段颜色，支持black或white取值
-   *    "navigationBarTitleText":""//String,导航栏标题文字内容
-   *    "themeStyle":""//String, 主题， dark或white
-   *    "navigationStyle":"" //String 导航栏样式，仅支持以下值：default 默认样式,custom 自定义导航栏，只保留右上角胶囊按钮
+   *   "navigationBarBackgroundColor":"#ffffff", //String, background color of navigation bar
+   *   "navigationBarTextStyle":"black or white" //String, text color of navigation bar, black or white
+   *    "navigationBarTitleText":""//String, title text of navigation bar
+   *    "themeStyle":""//String, theme, dark or white
+   *    "navigationStyle":"" //String, Style of navigation bar, only support: default, custom, only reserve capsule button at upper right corner
    * }
    * 
    * @param {Function} callback 
@@ -403,21 +403,21 @@ window.FFW = {
 
 
   /**
-   * 导入账户，如果options.mnemonic与options.seed都没有值，则进行创建账户界面，如果两者有一个有值，则进入导入账户界面
-   * @param {Object} options 传递参数
-   * @param {string=} options.mnemonic 助记词，可选参数
-   * @param {string=} options.seed 私钥，可选参数
-   * @param {string=} options.name 账户名称
-   * @param {function(Object)} callback 回调函数
+   * import account, if options.mnemonic and options.seed are null, will open create account page, otherwise open import account page
+   * @param {Object} options
+   * @param {string=} options.mnemonic mnemonic, optional
+   * @param {string=} options.seed seed, optional
+   * @param {string=} options.name account name
+   * @param {function(Object)} callback
    */
   impAccount(options,callback){
     //CODE
   };
 
  /**
-   * 获取交易分组和交易对
-   * @param {Object} options 参数
-   * @param {function(Object)} callback 回调函数
+   * get trade group and trade pairs
+   * @param {Object} options
+   * @param {function(Object)} callback
    */
   getTradePairs(options,callback){
     //code
@@ -425,9 +425,9 @@ window.FFW = {
 
 
  /**
-   * 新增交易分组
-   * @param {Object} options 参数
-   * @param {function(Object)} callback 回调函数
+   * add trade group
+   * @param {Object} options
+   * @param {function(Object)} callback
    */
   addTradeGroup(options,callback){
     //code

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JS Bridge protocol | FireFly Doc</title>
+    <meta name="description" content="firefly wallet doc website">
+    
+    
+    <link rel="preload" href="/fireflydoc/assets/css/0.styles.f0812460.css" as="style"><link rel="preload" href="/fireflydoc/assets/js/app.d2422f2b.js" as="script"><link rel="preload" href="/fireflydoc/assets/js/7.0903a27e.js" as="script"><link rel="prefetch" href="/fireflydoc/assets/js/10.5174131d.js"><link rel="prefetch" href="/fireflydoc/assets/js/11.db56b60a.js"><link rel="prefetch" href="/fireflydoc/assets/js/12.221bd01a.js"><link rel="prefetch" href="/fireflydoc/assets/js/13.8d86395b.js"><link rel="prefetch" href="/fireflydoc/assets/js/14.c534c8be.js"><link rel="prefetch" href="/fireflydoc/assets/js/15.9ba6fc9c.js"><link rel="prefetch" href="/fireflydoc/assets/js/2.173a0891.js"><link rel="prefetch" href="/fireflydoc/assets/js/3.a285248c.js"><link rel="prefetch" href="/fireflydoc/assets/js/4.2a3f4223.js"><link rel="prefetch" href="/fireflydoc/assets/js/5.527ecce0.js"><link rel="prefetch" href="/fireflydoc/assets/js/6.2a74a3cf.js"><link rel="prefetch" href="/fireflydoc/assets/js/8.6b876aa9.js"><link rel="prefetch" href="/fireflydoc/assets/js/9.bf9f70e2.js">
+    <link rel="stylesheet" href="/fireflydoc/assets/css/0.styles.f0812460.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/fireflydoc/en/" class="home-link router-link-active"><!----> <span class="site-name">FireFly Doc</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/fireflydoc/en/guide/" class="nav-link">Guide</a></div><div class="nav-item"><a href="/fireflydoc/en/jsapi/" class="nav-link router-link-exact-active router-link-active">JS API</a></div><div class="nav-item"><a href="/fireflydoc/en/urlschema/" class="nav-link">URL Schema</a></div><div class="nav-item"><a href="/fireflydoc/en/stellar/" class="nav-link">Stellar</a></div><div class="nav-item"><a href="https://github.com/imloama/fireflywallet-api" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  JS SDK
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://stellarcn.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Stellar Official
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fireflydoc/jsapi/" class="nav-link">简体中文</a></li><li class="dropdown-item"><!----> <a href="/fireflydoc/en/jsapi/" class="nav-link router-link-exact-active router-link-active">English</a></li></ul></div></div> <a href="https://github.com/fchainio/fireflydoc" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/fireflydoc/en/guide/" class="nav-link">Guide</a></div><div class="nav-item"><a href="/fireflydoc/en/jsapi/" class="nav-link router-link-exact-active router-link-active">JS API</a></div><div class="nav-item"><a href="/fireflydoc/en/urlschema/" class="nav-link">URL Schema</a></div><div class="nav-item"><a href="/fireflydoc/en/stellar/" class="nav-link">Stellar</a></div><div class="nav-item"><a href="https://github.com/imloama/fireflywallet-api" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  JS SDK
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://stellarcn.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Stellar Official
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fireflydoc/jsapi/" class="nav-link">简体中文</a></li><li class="dropdown-item"><!----> <a href="/fireflydoc/en/jsapi/" class="nav-link router-link-exact-active router-link-active">English</a></li></ul></div></div> <a href="https://github.com/fchainio/fireflydoc" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <!----> </div> <div class="page"> <div class="content"><h2 id="js-bridge-protocol"><a href="#js-bridge-protocol" aria-hidden="true" class="header-anchor">#</a> JS Bridge protocol</h2> <p>The native ablility that wallet offered to DAPP</p> <ul><li>cancel back recovery two apis</li></ul> <h2 id="import-via-npm"><a href="#import-via-npm" aria-hidden="true" class="header-anchor">#</a> import via npm</h2> <ul><li>Via NPM or yarn, import<a href="https://github.com/imloama/fireflywallet-api" target="_blank" rel="noopener noreferrer">fireflywallet-api<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <h3 id="all-api-function-description"><a href="#all-api-function-description" aria-hidden="true" class="header-anchor">#</a> All API function description</h3> <table><thead><tr><th style="text-align:left">function name</th> <th style="text-align:left">parameters</th> <th style="text-align:left">description</th> <th style="text-align:left">chargeable</th></tr></thead> <tbody><tr><td style="text-align:left">balances</td> <td style="text-align:left">callback:Function</td> <td style="text-align:left">return balance of current account</td> <td style="text-align:left">×</td></tr> <tr><td style="text-align:left">sign</td> <td style="text-align:left">data:Object,callback:Function</td> <td style="text-align:left">sign data in JSON format</td> <td style="text-align:left">×</td></tr> <tr><td style="text-align:left">pay</td> <td style="text-align:left">data:Object,callback:Function</td> <td style="text-align:left">payment, return hash value result</td> <td style="text-align:left">×</td></tr> <tr><td style="text-align:left">pathPayment</td> <td style="text-align:left">data:Object,callback:Function</td> <td style="text-align:left">pathpayment, return hash value result</td> <td style="text-align:left">×</td></tr> <tr><td style="text-align:left">trust</td> <td style="text-align:left">code:String,issuer:String,callback:Function</td> <td style="text-align:left">trust asset, return result</td> <td style="text-align:left">×</td></tr> <tr><td style="text-align:left">signXDR</td> <td style="text-align:left">data:String,callback:Function</td> <td style="text-align:left">sign XDR</td> <td style="text-align:left">×</td></tr> <tr><td style="text-align:left">scan</td> <td style="text-align:left">callback:Function</td> <td style="text-align:left">open qr code scan page</td> <td style="text-align:left">×</td></tr> <tr><td style="text-align:left">share</td> <td style="text-align:left">options:Object,callback:Function</td> <td style="text-align:left">share</td> <td style="text-align:left">×</td></tr> <tr><td style="text-align:left">request</td> <td style="text-align:left">options:Object,callback:Function</td> <td style="text-align:left">url request</td> <td style="text-align:left">×</td></tr> <tr><td style="text-align:left">toast</td> <td style="text-align:left">options:Object</td> <td style="text-align:left">show toast window</td> <td style="text-align:left">×</td></tr> <tr><td style="text-align:left">openDApp</td> <td style="text-align:left">appid:String</td> <td style="text-align:left">open DAPP</td> <td style="text-align:left">×</td></tr> <tr><td style="text-align:left">initWindow</td> <td style="text-align:left">options:Object</td> <td style="text-align:left">initialize current window</td> <td style="text-align:left">×</td></tr> <tr><td style="text-align:left">impAccount</td> <td style="text-align:left">options:Object,callback:Function</td> <td style="text-align:left">import account</td> <td style="text-align:left">×</td></tr> <tr><td style="text-align:left">getTradePairs</td> <td style="text-align:left">options:Object,callback:Function</td> <td style="text-align:left">get trade groups and pairs</td> <td style="text-align:left">√</td></tr> <tr><td style="text-align:left">addTradeGroup</td> <td style="text-align:left">options:Object,callback:Function</td> <td style="text-align:left">add new trade group</td> <td style="text-align:left">√</td></tr> <tr><td style="text-align:left">openKLine</td> <td style="text-align:left">options:Object,callback:Function</td> <td style="text-align:left">open trade quote k line</td> <td style="text-align:left">√</td></tr> <tr><td style="text-align:left">addTradePair</td> <td style="text-align:left">options:Object,callback:Function</td> <td style="text-align:left">add trade pair, specify group, can only add to other groups</td> <td style="text-align:left">√</td></tr> <tr><td style="text-align:left">addContact</td> <td style="text-align:left">options:Object,callback:Function</td> <td style="text-align:left">add contact</td> <td style="text-align:left">×</td></tr> <tr><td style="text-align:left">deposite</td> <td style="text-align:left">options:Object,callback:Function</td> <td style="text-align:left">deposite</td> <td style="text-align:left">√</td></tr> <tr><td style="text-align:left">withdraw</td> <td style="text-align:left">options:Object,callback:Function</td> <td style="text-align:left">withdraw</td> <td style="text-align:left">√</td></tr> <tr><td style="text-align:left">setInflationPool</td> <td style="text-align:left">options:Object,callback:Function</td> <td style="text-align:left">set inflation pool</td> <td style="text-align:left">√</td></tr> <tr><td style="text-align:left">openRedPocket</td> <td style="text-align:left">options:Object,callback:Function</td> <td style="text-align:left">open red pocket</td> <td style="text-align:left">×</td></tr> <tr><td style="text-align:left">sendRedPocket</td> <td style="text-align:left">options:Object,callback:Function</td> <td style="text-align:left">send red pocket</td> <td style="text-align:left">×</td></tr></tbody></table> <h2 id="interface-description"><a href="#interface-description" aria-hidden="true" class="header-anchor">#</a> Interface description</h2> <div class="language- extra-class"><pre class="language-text"><code>/**
+ * Interface root object
+ */
+window.FFW = {
+
+  /**
+   * current wallet version number(added in v2.1.0)
+   */
+  version:'2.2.6',
+  /**
+   * current wallet OS, iOS or android(added in v2.1.0)
+   */
+  platform: 'ios',
+
+  /**
+   * attribute, String
+   * public key address for current logged in account
+   */
+  address: 'GCENG5GLJ35GPJZQM3YJSFL3GMQ57MA5U6ZAAE6V4XIFVXFPY5MS5Q65',
+  /**
+   * attribute, Array
+   * Contacts info
+   * canceled since 2.4
+   */
+  contacts: [],
+
+  /**
+   * attribute, String
+   * Address book
+   * canceled since 2.4
+   */
+  myaddresses: [],
+  
+ /**
+  * UUID encrypted
+  */
+  uuid = 'UUID encrypted',
+
+ /**
+  * locale of current wallet
+  */
+  locale = 'zh_cn';
+
+   /**
+   * acquire balance
+   * @param callback: function type, expecting parameter response
+   * {
+   *   code: 'success or fail', 
+   *   message: 'notification or error', 
+   *   data: Array, data from balances attribute of account, check https://www.stellar.org/developers/horizon/reference/endpoints/accounts-single.html
+   * }
+   */
+   balances(callback){
+        //code
+   };
+
+  /**
+   * payment method
+   * @param {Object} data parameter
+   *  data: {
+   *    destination: 'reciever stellar address', 
+   *    code: 'asset code', 
+   *    issuer: 'asset issuer', 
+   *    amount: 'amount, number', 
+   *    memo_type: 'memo type, could be: NONE TEXT HASH ID RETURN', 
+   *    memo: 'memo content'
+   *  }
+   * @param {string,function} callback function
+   *      callback expects an object
+   *        {
+   *            code:'fail or success',
+   *            message:'notification message',
+   *            data:'result returned, object or null'
+   *          }
+   * Example:
+   *   FFW.pay({
+   *      destination: 'GBFGPA6MELXHEKWPJW75LOMC4CHGHTZ67LOWUGTUUILMXMZZGFLTO3X7', 
+   *      code: 'XFF', 
+   *      issuer: 'GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF', 
+   *      amount: 100, 
+   *      memo_type: 'TEXT', 
+   *      memo: 'Hello,FFW'
+   *    }, function(response){
+   *        if(response.code === 'fail'){
+   *          console.log('error:' + response.message)  
+   *        }else{
+   *          console.log('pay success')
+   *        }
+   *    })
+   */
+  pay(data, callback){
+    // code
+  },
+
+  /**
+   * pathpament method
+   * @param {Object} data parameter
+   *  data: {
+   *    destination: 'reciever stellar address', 
+   *    code: 'asset code', 
+   *    issuer: 'asset issuer', 
+   *    amount: 'amount, number', 
+   *    memo_type: 'memo type, could be: NONE TEXT HASH ID RETURN', 
+   *    memo: 'memo content'
+   *  }
+   * @param {string或function} callback
+   *      callback expects an object
+   *        {
+   *            code:'fail or success',
+   *            message:'notification message',
+   *            data:'result returned, object or null'
+   *          }
+   * Example:
+   *   FFW.pathPayment({
+   *      destination: 'GBFGPA6MELXHEKWPJW75LOMC4CHGHTZ67LOWUGTUUILMXMZZGFLTO3X7', 
+   *      code: 'XFF', 
+   *      issuer: 'GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF', 
+   *      amount: 100, 
+   *      memo_type: 'TEXT', 
+   *      memo: 'Hello,FFW'
+   *    }, function(response){
+   *        if(response.code === 'fail'){
+   *          console.log('error:' + response.message)  
+   *        }else{
+   *          console.log('success')
+   *        }
+   *    })
+   */
+  pathPayment(data, callback){
+    //code
+  },
+
+  /**
+   * sign data to make backend application have confident that the operator has appropriate access to the account
+   * @param {String} data to sign, JSON, then convert to String, which needs to keep order, otherwise verification will fail.
+   * @param {string或function} callback
+   *      callback expects an object
+   *        {
+   *            code:'fail or success',
+   *            message:'notification message',
+   *            data:'data returned, string, encoded in base64'
+   *          }
+   *    Example:
+   *    let data = {name: 'firefly wallet dapp'}
+   *    data = JSON.stringify(data)
+   *    FFW.sign(data, function(response){
+   *        if(response.code === 'fail'){
+   *          console.log('error:' + response.message)  
+   *        }else{
+   *          console.log('do success')
+   *          console.log('The result after signing {name: &quot;firefly wallet dapp&quot;} :'+response.data)
+   *        }
+   *    })
+   */
+  sign(data, callback){
+    //code
+  },
+
+  /**
+   * sign xdr for transaction
+   * @param {string} data, xdr generated for transaction
+   * @param {String} message
+   * @param {string或function} callback
+   *      callback expects an object
+   *        {
+   *            code:'fail or success',
+   *            message:'notification message',
+   *            data:'data returned, string, result xdr after signing it'
+   *          }
+   * Example:
+   *   let xdr = 'AAAAAEpng8wi7nIqz02/1bmC4I5jzz763WoadKIWy7M5MVc3AAAAZACHjkkAAAABAAAAAAAAAAAAAAABAAAAAAAAAAoAAAALaG9tZV9kb21haW4AAAAAAQAAABBodHRwOi8vZmNoYWluLmlvAAAAAAAAAAA='
+   *   FFW.signXDR(xdr, function(response){
+   *        if(response.code === 'fail'){
+   *          console.log('error:' + response.message)  
+   *        }else{
+   *          console.log('do success')
+   *          console.log('XDR result after signing XDR :'+response.data)
+   *        }
+   *    })
+   */
+  signXDR(data, message, callback){
+    // code
+  },
+  /**
+   * canceled since 2.4
+   * backup data, including contacts and address book
+   * @param {string或function} callback
+   *      callback expects an object
+   *        {
+   *            code:'fail or success',
+   *            message:'notification message',
+   *            data:'data returned, string, encrypted'
+   *          }
+   * Example:
+   *   FFW.backup(function(response){
+   *        if(response.code === 'fail'){
+   *          console.log('error:' + response.message)  
+   *        }else{
+   *          console.log('do success')
+   *          console.log('Backup data encrypted:'+response.data)
+   *        }
+   *    })
+   */
+  backup(callback){
+    //code
+  },
+
+  /**
+   * canceled since 2.4
+   * recovery data, from data encrypted by backup function, overwrite to current wallet
+   * @param {string} data 
+   * @param {string或function} callback
+   *      callback expects an object
+   *        {
+   *            code:'fail or success',
+   *            message:'notification message'
+   *          }
+   * Example
+   *   //notice, here is the backup data
+   *   FFW.recovery(data,function(response){
+   *        if(response.code === 'fail'){
+   *          console.log('error:' + response.message)  
+   *        }else{
+   *          console.log('do success')
+   *        }
+   *    })
+   */
+  recovery(data, callback){
+    //code
+  },
+  /**
+   * Trust asset
+   * @param {string} code
+   * @param {string} issuer 
+   * @param {string或function} callback
+   *      callback expects an object
+   *        {
+   *            code:'fail or success',
+   *            message:'notification message'
+   *          }
+   * Example:
+   *   let code = 'XFF';
+   *   let issuer = 'GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF';
+   *   FFW.trust(code,issuer,function(response){
+   *        if(response.code === 'fail'){
+   *          console.log('error:' + response.message)  
+   *        }else{
+   *          console.log('do success')
+   *        }
+   *    })
+   */
+  trust(code, issuer, callback){
+    //code
+  }
+
+ /**
+  * Scan QR code to get result scanned.
+  * Example:
+  *   FFW.scan(function(response){
+  *        if(response.code === 'fail'){
+  *          console.log('error:' + response.message)  
+  *        }else{
+  *          console.log('scan result:' + response.data)//response.data is the scanning result, string
+  *        }
+  *    })
+  */ 
+  scan(callback){
+   // code
+  }
+
+  /**
+   * Share, implementation detail: https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-PluginShare
+   * @param {Object} options
+   * @param {string或function} callback
+   *      callback expects an object
+   *        {
+   *            code:'fail or success',
+   *            message:'notification message'
+   *          }
+   * Example:
+   *   let options = {
+   *      message: 'Share picture',
+   *      files: ['data:image/png;base64,iVBORw0......K5CYII='], //remote picture url or data in base64 format
+   *     };
+   *   FFW.share(options,function(response){
+   *        if(response.code === 'fail'){
+   *          console.log('error:' + response.message)  
+   *        }else{
+   *          console.log('share success')
+   *        }
+   *    })
+   */
+  share(options,callback){
+    //code
+  }
+
+  /**
+   * call native HTTP request
+   * @param {Object} config
+   * Example:
+   * {
+   *    timeout: int 5s default
+   *    url: String URL address
+   *    method: String GET or POST
+   *    content-type: String
+   *    headers: Object，header parameter
+   * }
+   * @param {Function} callback
+   * Example:
+   *  function(response){
+   *    var statusCode = response.statusCode;//200 is normal return
+   *    var responseText = response.responseText;//content returned, String
+   *    var headers = response.headers;//head info, Object
+   *  }
+   */
+  request(config,callback){
+      // code
+  }
+
+  /**
+   * navite toast notification message
+   * @param {Object} config
+   * Example:
+   * {
+   *     &quot;long&quot;:true/false,//showing long or short time toast
+   *     &quot;msg&quot;:String //content in toast
+   * }
+   *
+   */
+  toast(config){
+      //code
+  }
+
+  /**
+   * Open DAPP
+   * @param {String} dappid of DAPP
+   * 
+   */
+  openDApp(dappid){
+
+  }
+
+  /**
+   * Initialize window
+   * @param {Object} config
+   * Example:
+   * {
+   *   &quot;navigationBarBackgroundColor&quot;:&quot;#ffffff&quot;, //String, background color of navigation bar
+   *   &quot;navigationBarTextStyle&quot;:&quot;black or white&quot; //String, text color of navigation bar, black or white
+   *    &quot;navigationBarTitleText&quot;:&quot;&quot;//String, title text of navigation bar
+   *    &quot;themeStyle&quot;:&quot;&quot;//String, theme, dark or white
+   *    &quot;navigationStyle&quot;:&quot;&quot; //String, Style of navigation bar, only support: default, custom, only reserve capsule button at upper right corner
+   * }
+   * 
+   * @param {Function} callback 
+   * 
+   */
+  initWindow(config, callback){
+    //code
+  };
+
+
+  /**
+   * import account, if options.mnemonic and options.seed are null, will open create account page, otherwise open import account page
+   * @param {Object} options
+   * @param {string=} options.mnemonic mnemonic, optional
+   * @param {string=} options.seed seed, optional
+   * @param {string=} options.name account name
+   * @param {function(Object)} callback
+   */
+  impAccount(options,callback){
+    //CODE
+  };
+
+ /**
+   * get trade group and trade pairs
+   * @param {Object} options
+   * @param {function(Object)} callback
+   */
+  getTradePairs(options,callback){
+    //code
+  };
+
+
+ /**
+   * add trade group
+   * @param {Object} options
+   * @param {function(Object)} callback
+   */
+  addTradeGroup(options,callback){
+    //code
+  };
+
+}
+</code></pre></div></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/fchainio/fireflydoc/edit/master/src/en/jsapi/README.md" target="_blank" rel="noopener noreferrer">Edit this page on GitHub</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">4/19/2019, 2:50:11 PM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/fireflydoc/assets/js/app.d2422f2b.js" defer></script><script src="/fireflydoc/assets/js/7.0903a27e.js" defer></script>
+  </body>
+</html>
