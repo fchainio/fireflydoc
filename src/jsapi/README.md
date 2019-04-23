@@ -9,31 +9,31 @@
 
 
 ### 所有接口函数说明
-|函数名|参数|函数说明|是否收费|
+|函数名|参数|函数说明|
 |:---- |:---- |:---- |:---- |
-|balances|callback:Function|返回当前登陆账户的余额|×|
-|sign|data:Object,callback:Function|对JSON格式的data数据进行签名|×|
-|pay|data:Object,callback:Function|支付功能，将提交的hash结果返回|×|
-|pathPayment|data:Object,callback:Function|路径支付，将提交的hash结果返回|×|
-|trust|code:String,issuer:String,callback:Function|授信资产，将授信结果返回|×|
-|signXDR|data:String,callback:Function|XDR签名|×|
-|scan|callback:Function|打开扫描二维码界面|×|
-|share|options:Object,callback:Function|分享功能|×|
-|request|options:Object,callback:Function|url请求功能|×|
-|toast|options:Object|显示吐丝窗口|×|
-|openDApp|appid:String|打开其他DApp|×|
-|initWindow|options:Object|初始化当前界面的窗口|×|
-|impAccount|options:Object,callback:Function|导入账户|×|
-|getTradePairs|options:Object,callback:Function|获取交易分组和交易对|√|
-|addTradeGroup|options:Object,callback:Function|新增交易分组|√|
-|openKLine|options:Object,callback:Function|打开交易行情K线|√|
-|addTradePair|options:Object,callback:Function|新增交易对，指定分组，只能添加到其他分组|√|
-|addContact|options:Object,callback:Function|添加联系人|×|
-|deposite|options:Object,callback:Function|充币|√|
-|withdraw|options:Object,callback:Function|提币|√|
-|setInflationPool|options:Object,callback:Function|设置通胀池|√|
-|openRedPocket|options:Object,callback:Function|打开币红包|×|
-|sendRedPocket|options:Object,callback:Function|发币红包|×|
+|balances|callback:Function|返回当前登陆账户的余额|
+|sign|data:Object,callback:Function|对JSON格式的data数据进行签名|
+|pay|data:Object,callback:Function|支付功能，将提交的hash结果返回|
+|pathPayment|data:Object,callback:Function|路径支付，将提交的hash结果返回|
+|trust|code:String,issuer:String,callback:Function|授信资产，将授信结果返回|
+|signXDR|data:String,callback:Function|XDR签名|
+|scan|callback:Function|打开扫描二维码界面|
+|share|options:Object,callback:Function|分享功能|
+|request|options:Object,callback:Function|url请求功能|
+|toast|options:Object|显示吐丝窗口|
+|openDApp|appid:String|打开其他DApp|
+|initWindow|options:Object|初始化当前界面的窗口|
+|impAccount|options:Object,callback:Function|导入账户|
+|getTradePairs|options:Object,callback:Function|获取交易分组和交易对|
+|addTradeGroup|options:Object,callback:Function|新增交易分组|
+|openKLine|options:Object,callback:Function|打开交易行情K线|
+|addTradePair|options:Object,callback:Function|新增交易对，指定分组，只能添加到其他分组|
+|addContact|options:Object,callback:Function|添加联系人|
+|deposite|options:Object,callback:Function|充币|
+|withdraw|options:Object,callback:Function|提币|
+|setInflationPool|options:Object,callback:Function|设置通胀池|
+|openRedPocket|options:Object,callback:Function|打开币红包|
+|sendRedPocket|options:Object,callback:Function|发币红包|
 
 
 
