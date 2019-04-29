@@ -5,7 +5,7 @@ The native ablility that wallet offered to DAPP
 - cancel back recovery two apis
 
 ## import via npm
-- Via NPM or yarn, import[fireflywallet-api](https://github.com/imloama/fireflywallet-api)
+- Via NPM or yarn, import[fireflywallet-api](https://github.com/imloama/fireflywallet-api)
 
 
 ### All API function description

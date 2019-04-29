@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Start →
-actionLink: /guide/
+actionLink: /en/guide/
 footer: MIT Licensed | Copyright © 2019-present fchain.io
 ---
 
