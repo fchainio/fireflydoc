@@ -40,10 +40,10 @@ module.exports = {
         lastUpdated: 'Last Updated',
         nav: require('./nav/en'),
         sidebar: {
-          '/guide/': guideSideBar('Guide'),
-          '/jsapi/': jsAPISideBar('JS API'),
-          '/urlschema/': urlSchemaSideBar('URL Schema'),
-          '/stellar/': stellarSideBar('Stellar')
+          '/en/guide/': guideSideBar('Guide'),
+          '/en/jsapi/': jsAPISideBar('JS API'),
+          '/en/urlschema/': urlSchemaSideBar('URL Schema'),
+          '/en/stellar/': stellarSideBar('Stellar')
         }
       }
     },
