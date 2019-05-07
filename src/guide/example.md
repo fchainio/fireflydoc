@@ -5,6 +5,8 @@ URL为https://t.cn/Re3xw6q
 添加方法：打开萤火钱包APP中的『探索』，点击右上角的图标，再次点击加号，输入名称，添加上述地址即可。返回『探索』页面，点击打开。
 源码见[这里](https://github.com/fchainio/firefly-examples/tree/master/dapp)
 
+如果你的项目是基于`nodejs`的，可以安装官方类库[fireflywallet-api](https://github.com/fchainio/fireflywallet-api)，参考示例项目[firefly-examples中的vue项目示例](https://github.com/fchainio/firefly-examples/tree/master/dapp/vue_demo)。
+
 页面在萤火钱包中打开后，萤火钱包会注入FFW对象，可以使用window.FFW访问。可以根据此判断网页是否是在萤火内开启。
 
 ## 启动APP开发者模式
@@ -78,7 +80,7 @@ window.FFW.locale
 
 ## 获取用户地址（ID）
 
- 返回当前用户的地址，类型为字符串，如GCENG5GLJ35GPJZQM3YJSFL3GMQ57MA5U6ZAAE6V4XIFVXFPY5MS5Q65
+ 返回当前用户的地址，类型为字符串，如`GCENG5GLJ35GPJZQM3YJSFL3GMQ57MA5U6ZAAE6V4XIFVXFPY5MS5Q65`
 
 ```
 window.FFW.address
@@ -88,6 +90,48 @@ window.FFW.address
 
 ```
 'GCENG5GLJ35GPJZQM3YJSFL3GMQ57MA5U6ZAAE6V4XIFVXFPY5MS5Q65'
+```
+
+## 获取用户账户名称
+
+ 返回当前用户的账户名称，类型为字符串，如：`萤火小鹅`
+
+```
+window.FFW.accountName
+```
+
+  返回结果
+
+```
+'萤火小鹅'
+```
+
+## 获取当前用户设置的horizon服务器地址
+
+  返回当前用户设置的horizon服务器地址，类型为字符串，如：`https://horizon.stellar.org`
+
+```
+window.FFW.horizonUrl
+```
+
+  返回结果
+
+```
+'https://horizon.stellar.org'
+```  
+
+## 获取horizon服务器的网络密语
+
+  返回当前用户设置的horizon服务器的网络密码(network passphrase)
+
+```
+window.FFW.network
+```
+
+  返回
+
+```
+'Public Global Stellar Network ; September 2015'
 ```
 
 ## 获取用户余额（balance）

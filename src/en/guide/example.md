@@ -5,6 +5,9 @@ https://t.cn/Re3xw6q
 How to add: Choose 『Discovery』 in Firefly wallet, click the icon at the top right-hand corner, then click 『+』, input name and paste link above to make addition done. Return to 『Discovery』 to click the new added DAPP to open it.
 Source code is [here](https://github.com/fchainio/firefly-examples/tree/master/dapp)
 
+If your project based on `nodejs`, you can install official library called [fireflywallet-api](https://github.com/fchainio/fireflywallet-api), and the reference exmaple project is [an example of vue project] (https://github.com/fchainio/firefly-examples/tree/master/dapp/vue_demo).
+
+
 FFW Object will be injected when you open the page in Firefly wallet, so you may know if this page is opend in wallet or not by checking the existence of windows.FFW object.
 
 ## Enable dev mode
@@ -79,7 +82,7 @@ window.FFW.locale
 
 ## Acquire user address(ID)
 
- Return current user address, String type, like: GCENG5GLJ35GPJZQM3YJSFL3GMQ57MA5U6ZAAE6V4XIFVXFPY5MS5Q65.
+ Return current user address, String type, like: `GCENG5GLJ35GPJZQM3YJSFL3GMQ57MA5U6ZAAE6V4XIFVXFPY5MS5Q65`.
 
 ```
 window.FFW.address
@@ -90,6 +93,50 @@ window.FFW.address
 ```
 'GCENG5GLJ35GPJZQM3YJSFL3GMQ57MA5U6ZAAE6V4XIFVXFPY5MS5Q65'
 ```
+
+
+## Acquire user accountName
+
+ Return current user accountName, String type, like: `FireFly Goose`
+
+```
+window.FFW.accountName
+```
+
+  Value returned
+
+```
+'FireFly Goose'
+```
+
+## Acquire user horizon server path
+
+  Return user horizon server path, String type, like: `https://horizon.stellar.org`
+
+```
+window.FFW.horizonUrl
+```
+
+  Value returned
+
+```
+'https://horizon.stellar.org'
+```  
+
+## Acquire network passphrase
+
+  Return network passphrase of user horizon
+
+```
+window.FFW.network
+```
+
+  Value returned
+
+```
+'Public Global Stellar Network ; September 2015'
+```
+
 
 ## Acquire user balance
 
