@@ -20,3 +20,5 @@ footer: MIT Licensed | Copyright © 2019-present fchain.io
 * 在DAPP初始加载整个界面后，萤火钱包会在当前界面注入SDK代码，当前DAPP需要监听window.FFW对象是否存在，当window.FFW对象存在时，即可从中获取相应的地址和接口等
 * 开发者打开萤火钱包APP中的『轻应用』，点击右上角的图标，可以添加自己本地的地址，在萤火钱包中进行测试
 * 开发者也可以下载[萤火钱包源码](https://github.com/fchainio/firefly)，编译运行后，运行安卓或IOS模拟器进行测试
+
+<locales />

@@ -21,7 +21,7 @@ module.exports = {
       '/': {
         lang: 'zh-CN',
         label: '简体中文',
-        selectText: '选择语言',
+        selectText: 'Language',
         editLinkText: '在 GitHub 上编辑此页',
         lastUpdated: '上次更新',
         nav: require('./nav/zh'),
@@ -35,7 +35,7 @@ module.exports = {
       '/en/': {
         lang: 'en-US',
         label: 'English',
-        selectText: 'Languages',
+        selectText: '选择语言',
         editLinkText: 'Edit this page on GitHub',
         lastUpdated: 'Last Updated',
         nav: require('./nav/en'),
