@@ -5,7 +5,7 @@
 - 取消back recovery两个接口
 
 ## 通过npm引用帮助类库
-- 可以通过[fireflywallet-api](https://github.com/imloama/fireflywallet-api)，通过NPM或yarn引入，调用以下接口
+- 可以通过[fireflywallet-api](https://github.com/fchainio/fireflywallet-api)，通过NPM或yarn引入，调用以下接口
 
 
 ### 所有接口函数说明
