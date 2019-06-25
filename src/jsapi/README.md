@@ -23,17 +23,6 @@
 |toast|options:Object|显示吐丝窗口|
 |openDApp|appid:String|打开其他DApp|
 |initWindow|options:Object|初始化当前界面的窗口|
-|impAccount|options:Object,callback:Function|导入账户|
-|getTradePairs|options:Object,callback:Function|获取交易分组和交易对|
-|addTradeGroup|options:Object,callback:Function|新增交易分组|
-|openKLine|options:Object,callback:Function|打开交易行情K线|
-|addTradePair|options:Object,callback:Function|新增交易对，指定分组，只能添加到其他分组|
-|addContact|options:Object,callback:Function|添加联系人|
-|deposite|options:Object,callback:Function|充币|
-|withdraw|options:Object,callback:Function|提币|
-|setInflationPool|options:Object,callback:Function|设置通胀池|
-|openRedPocket|options:Object,callback:Function|打开币红包|
-|sendRedPocket|options:Object,callback:Function|发币红包|
 
 
 
@@ -398,38 +387,6 @@ window.FFW = {
    * 
    */
   initWindow(config, callback){
-    //code
-  };
-
-
-  /**
-   * 导入账户，如果options.mnemonic与options.seed都没有值，则进行创建账户界面，如果两者有一个有值，则进入导入账户界面
-   * @param {Object} options 传递参数
-   * @param {string=} options.mnemonic 助记词，可选参数
-   * @param {string=} options.seed 私钥，可选参数
-   * @param {string=} options.name 账户名称
-   * @param {function(Object)} callback 回调函数
-   */
-  impAccount(options,callback){
-    //CODE
-  };
-
- /**
-   * 获取交易分组和交易对
-   * @param {Object} options 参数
-   * @param {function(Object)} callback 回调函数
-   */
-  getTradePairs(options,callback){
-    //code
-  };
-
-
- /**
-   * 新增交易分组
-   * @param {Object} options 参数
-   * @param {function(Object)} callback 回调函数
-   */
-  addTradeGroup(options,callback){
     //code
   };
 
