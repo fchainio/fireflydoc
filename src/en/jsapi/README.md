@@ -9,32 +9,20 @@ The native ablility that wallet offered to DAPP
 
 
 ### All API function description
-|function name|parameters|description|chargeable|
-|:---- |:---- |:---- |:---- |
-|balances|callback:Function|return balance of current account|×|
-|sign|data:Object,callback:Function|sign data in JSON format|×|
-|pay|data:Object,callback:Function|payment, return hash value result|×|
-|pathPayment|data:Object,callback:Function|pathpayment, return hash value result|×|
-|trust|code:String,issuer:String,callback:Function|trust asset, return result|×|
-|signXDR|data:String,callback:Function|sign XDR|×|
-|scan|callback:Function|open qr code scan page|×|
-|share|options:Object,callback:Function|share|×|
-|request|options:Object,callback:Function|url request|×|
-|toast|options:Object|show toast window|×|
-|openDApp|appid:String|open DAPP|×|
-|initWindow|options:Object|initialize current window|×|
-|impAccount|options:Object,callback:Function|import account|×|
-|getTradePairs|options:Object,callback:Function|get trade groups and pairs|√|
-|addTradeGroup|options:Object,callback:Function|add new trade group|√|
-|openKLine|options:Object,callback:Function|open trade quote k line|√|
-|addTradePair|options:Object,callback:Function|add trade pair, specify group, can only add to other groups|√|
-|addContact|options:Object,callback:Function|add contact|×|
-|deposite|options:Object,callback:Function|deposite|√|
-|withdraw|options:Object,callback:Function|withdraw|√|
-|setInflationPool|options:Object,callback:Function|set inflation pool|√|
-|openRedPocket|options:Object,callback:Function|open red pocket|×|
-|sendRedPocket|options:Object,callback:Function|send red pocket|×|
-
+|function name|parameters|description|
+|:---- |:---- |:---- |
+|balances|callback:Function|return balance of current account|
+|sign|data:Object,callback:Function|sign data in JSON format|
+|pay|data:Object,callback:Function|payment, return hash value result|
+|pathPayment|data:Object,callback:Function|pathpayment, return hash value result|
+|trust|code:String,issuer:String,callback:Function|trust asset, return result|
+|signXDR|data:String,callback:Function|sign XDR|
+|scan|callback:Function|open qr code scan page|
+|share|options:Object,callback:Function|share|
+|request|options:Object,callback:Function|url request|
+|toast|options:Object|show toast window|
+|openDApp|appid:String|open DAPP|
+|initWindow|options:Object|initialize current window|
 
 
 
@@ -398,38 +386,6 @@ window.FFW = {
    * 
    */
   initWindow(config, callback){
-    //code
-  };
-
-
-  /**
-   * import account, if options.mnemonic and options.seed are null, will open create account page, otherwise open import account page
-   * @param {Object} options
-   * @param {string=} options.mnemonic mnemonic, optional
-   * @param {string=} options.seed seed, optional
-   * @param {string=} options.name account name
-   * @param {function(Object)} callback
-   */
-  impAccount(options,callback){
-    //CODE
-  };
-
- /**
-   * get trade group and trade pairs
-   * @param {Object} options
-   * @param {function(Object)} callback
-   */
-  getTradePairs(options,callback){
-    //code
-  };
-
-
- /**
-   * add trade group
-   * @param {Object} options
-   * @param {function(Object)} callback
-   */
-  addTradeGroup(options,callback){
     //code
   };
 
