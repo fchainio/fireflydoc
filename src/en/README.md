@@ -12,6 +12,7 @@ Firefly wallet(1.x-2.1.x) is an open source project using MIT protocol, which is
 
 Firefly wallet v2.x provides third party DAPP interface to enable developers to create their own DAPP, which brings more choices and features to end users.
 
+Firefly wallet v3.x supports Bitcoin, Ethereum including ERC20 token, and Stellar network. Firefly wallet currently support Ethereum and Stellar DApps.
 
 
 ### Application development procedure

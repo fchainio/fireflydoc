@@ -18,12 +18,8 @@
 |trust|code:String,issuer:String,callback:Function|授信资产，将授信结果返回|
 |signXDR|data:String,callback:Function|XDR签名|
 |scan|callback:Function|打开扫描二维码界面|
-|share|options:Object,callback:Function|分享功能|
-|request|options:Object,callback:Function|url请求功能|
-|toast|options:Object|显示吐丝窗口|
 |openDApp|appid:String|打开其他DApp|
 |initWindow|options:Object|初始化当前界面的窗口|
-
 
 
 
@@ -324,44 +320,6 @@ window.FFW = {
   share(options,callback){
     //code
   }
-
-  /**
-   * 调用原生的HTTP请求
-   * @param {Object} config 请求参数
-   * 示例：
-   * {
-   *    timeout: int 超时时间，默认5秒
-   *    url: String 请求的URL地址
-   *    method: String 请求方式，GET或POST
-   *    content-type: String
-   *    headers: Object，header参数
-   * }
-   * @param {Function} callback 回调函数
-   * 示例：
-   *  function(response){
-   *    var statusCode = response.statusCode;//200是正常返回
-   *    var responseText = response.responseText;//返回的内容，String类型
-   *    var headers = response.headers;//返回的头部信息，Object类型
-   *  }
-   */
-  request(config,callback){
-      // code
-  }
-
-  /**
-   * 显示原生toast提示信息
-   * @param {Object} config 配置信息
-   * 示例：
-   * {
-   *     "long":true/false,//是显示为长时间toast，还是短时间toast
-   *     "msg":String //toast显示的内容
-   * }
-   *
-   */
-  toast(config){
-      //code
-  }
-
   /**
    * 跳转到其他的DAPP中
    * @param {String} 其他dapp的dappid的值
@@ -392,3 +350,12 @@ window.FFW = {
 
 }
 ```
+
+## 以太钱包协议
+
+  萤火钱包v3.x版本支持比特币、以太（含ERC20）、恒星三种区块链代币，并且在原有JS API的基础支持恒星生态的基础上，通过web3.js支持以太DApp。
+  DApp浏览器兼容Metamask, 你可以直接把你的Ethereum DApp迁移到 萤火钱包， 甚至不用写任何代码。
+
+  萤火钱包DApp浏览器和DApp的交互基于`EIP1102`的标准，DApp必须按照`EIP1102`的方式才可以拿到用户帐号、和执行其他操作。
+
+  你也可以检查 metamask 的相关[文档](https://github.com/MetaMask/faq/blob/09281ac3dfcc19703f25fc9c960d2b7c65a0a4b3/DEVELOPERS.md#partly_sunny-web3---ethereum-browser-environment-check)

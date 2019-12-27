@@ -19,8 +19,6 @@ The native ablility that wallet offered to DAPP
 |signXDR|data:String,callback:Function|sign XDR|
 |scan|callback:Function|open qr code scan page|
 |share|options:Object,callback:Function|share|
-|request|options:Object,callback:Function|url request|
-|toast|options:Object|show toast window|
 |openDApp|appid:String|open DAPP|
 |initWindow|options:Object|initialize current window|
 
@@ -325,43 +323,6 @@ window.FFW = {
   }
 
   /**
-   * call native HTTP request
-   * @param {Object} config
-   * Example:
-   * {
-   *    timeout: int 5s default
-   *    url: String URL address
-   *    method: String GET or POST
-   *    content-type: String
-   *    headers: Object，header parameter
-   * }
-   * @param {Function} callback
-   * Example:
-   *  function(response){
-   *    var statusCode = response.statusCode;//200 is normal return
-   *    var responseText = response.responseText;//content returned, String
-   *    var headers = response.headers;//head info, Object
-   *  }
-   */
-  request(config,callback){
-      // code
-  }
-
-  /**
-   * navite toast notification message
-   * @param {Object} config
-   * Example:
-   * {
-   *     "long":true/false,//showing long or short time toast
-   *     "msg":String //content in toast
-   * }
-   *
-   */
-  toast(config){
-      //code
-  }
-
-  /**
    * Open DAPP
    * @param {String} dappid of DAPP
    * 
@@ -391,3 +352,14 @@ window.FFW = {
 
 }
 ```
+
+
+## Ethereum DApps
+
+  Firefly wallet v3.x currently support Ethereum and Stellar DApps.
+
+  Firefly wallet DApp browser has the compatibility of Metamask, your DApp should naturally work with Firefly wallet if it is compatible with Metamask as well.
+
+  The interaction between Firefly wallet DApp browser and DApp is base on [EIP1102](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1102.md). DApp must implement `EIP1102` to get user account and send transaction.
+
+  You can also check the related [documentation](https://github.com/MetaMask/faq/blob/09281ac3dfcc19703f25fc9c960d2b7c65a0a4b3/DEVELOPERS.md#partly_sunny-web3---ethereum-browser-environment-check) of metamask

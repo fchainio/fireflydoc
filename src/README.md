@@ -12,7 +12,7 @@ footer: MIT Licensed | Copyright © 2019-present fchain.io
 
 萤火钱包v2.x开放了第三方DAPP接口，让开发者可以开发自己的DAPP，为用户提供更多的选择和功能。
 
-
+萤火钱包v3.x支持比特币、以太（含ERC20）、恒星三种生态，除了支持恒星生成的DApp外，也支持基于web3.js的以太DApp。
 
 ### 应用开发流程
 * DAPP为标准的webapp工程，开发者可以选择自己熟悉的相关技术栈构建项目
