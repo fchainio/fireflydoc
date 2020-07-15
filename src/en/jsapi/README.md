@@ -1,11 +1,8 @@
 ## JS Bridge protocol
 
-The native ablility that wallet offered to DAPP
+The native ablility that runtime offered to DAPP
 
 - cancel back recovery two apis
-
-## import via npm
-- Via NPM or yarn, import[fireflywallet-api](https://github.com/fchainio/fireflywallet-api)
 
 
 ### All API function description
@@ -29,14 +26,14 @@ The native ablility that wallet offered to DAPP
 /**
  * Interface root object
  */
-window.FFW = {
+window.qlchain = {
 
   /**
-   * current wallet version number(added in v2.1.0)
+   * current runtime version number(added in v2.1.0)
    */
   version:'2.2.6',
   /**
-   * current wallet OS, iOS or android(added in v2.1.0)
+   * current runtime OS, iOS or android(added in v2.1.0)
    */
   platform: 'ios',
 
@@ -65,7 +62,7 @@ window.FFW = {
   uuid = 'UUID encrypted',
 
  /**
-  * locale of current wallet
+  * locale of current runtime
   */
   locale = 'zh_cn';
 
@@ -101,13 +98,13 @@ window.FFW = {
    *            data:'result returned, object or null'
    *          }
    * Example:
-   *   FFW.pay({
+   *   qlchain.pay({
    *      destination: 'GBFGPA6MELXHEKWPJW75LOMC4CHGHTZ67LOWUGTUUILMXMZZGFLTO3X7', 
    *      code: 'XFF', 
    *      issuer: 'GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF', 
    *      amount: 100, 
    *      memo_type: 'TEXT', 
-   *      memo: 'Hello,FFW'
+   *      memo: 'Hello,qlchain'
    *    }, function(response){
    *        if(response.code === 'fail'){
    *          console.log('error:' + response.message)  
@@ -139,13 +136,13 @@ window.FFW = {
    *            data:'result returned, object or null'
    *          }
    * Example:
-   *   FFW.pathPayment({
+   *   qlchain.pathPayment({
    *      destination: 'GBFGPA6MELXHEKWPJW75LOMC4CHGHTZ67LOWUGTUUILMXMZZGFLTO3X7', 
    *      code: 'XFF', 
    *      issuer: 'GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF', 
    *      amount: 100, 
    *      memo_type: 'TEXT', 
-   *      memo: 'Hello,FFW'
+   *      memo: 'Hello,qlchain'
    *    }, function(response){
    *        if(response.code === 'fail'){
    *          console.log('error:' + response.message)  
@@ -169,14 +166,14 @@ window.FFW = {
    *            data:'data returned, string, encoded in base64'
    *          }
    *    Example:
-   *    let data = {name: 'firefly wallet dapp'}
+   *    let data = {name: 'qlchain runtime dapp'}
    *    data = JSON.stringify(data)
-   *    FFW.sign(data, function(response){
+   *    qlchain.sign(data, function(response){
    *        if(response.code === 'fail'){
    *          console.log('error:' + response.message)  
    *        }else{
    *          console.log('do success')
-   *          console.log('The result after signing {name: "firefly wallet dapp"} :'+response.data)
+   *          console.log('The result after signing {name: "qlchain runtime dapp"} :'+response.data)
    *        }
    *    })
    */
@@ -197,7 +194,7 @@ window.FFW = {
    *          }
    * Example:
    *   let xdr = 'AAAAAEpng8wi7nIqz02/1bmC4I5jzz763WoadKIWy7M5MVc3AAAAZACHjkkAAAABAAAAAAAAAAAAAAABAAAAAAAAAAoAAAALaG9tZV9kb21haW4AAAAAAQAAABBodHRwOi8vZmNoYWluLmlvAAAAAAAAAAA='
-   *   FFW.signXDR(xdr, function(response){
+   *   qlchain.signXDR(xdr, function(response){
    *        if(response.code === 'fail'){
    *          console.log('error:' + response.message)  
    *        }else{
@@ -220,7 +217,7 @@ window.FFW = {
    *            data:'data returned, string, encrypted'
    *          }
    * Example:
-   *   FFW.backup(function(response){
+   *   qlchain.backup(function(response){
    *        if(response.code === 'fail'){
    *          console.log('error:' + response.message)  
    *        }else{
@@ -235,7 +232,7 @@ window.FFW = {
 
   /**
    * canceled since 2.4
-   * recovery data, from data encrypted by backup function, overwrite to current wallet
+   * recovery data, from data encrypted by backup function, overwrite to current runtime
    * @param {string} data 
    * @param {string或function} callback
    *      callback expects an object
@@ -245,7 +242,7 @@ window.FFW = {
    *          }
    * Example
    *   //notice, here is the backup data
-   *   FFW.recovery(data,function(response){
+   *   qlchain.recovery(data,function(response){
    *        if(response.code === 'fail'){
    *          console.log('error:' + response.message)  
    *        }else{
@@ -269,7 +266,7 @@ window.FFW = {
    * Example:
    *   let code = 'XFF';
    *   let issuer = 'GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF';
-   *   FFW.trust(code,issuer,function(response){
+   *   qlchain.trust(code,issuer,function(response){
    *        if(response.code === 'fail'){
    *          console.log('error:' + response.message)  
    *        }else{
@@ -284,7 +281,7 @@ window.FFW = {
  /**
   * Scan QR code to get result scanned.
   * Example:
-  *   FFW.scan(function(response){
+  *   qlchain.scan(function(response){
   *        if(response.code === 'fail'){
   *          console.log('error:' + response.message)  
   *        }else{
@@ -310,7 +307,7 @@ window.FFW = {
    *      message: 'Share picture',
    *      files: ['data:image/png;base64,iVBORw0......K5CYII='], //remote picture url or data in base64 format
    *     };
-   *   FFW.share(options,function(response){
+   *   qlchain.share(options,function(response){
    *        if(response.code === 'fail'){
    *          console.log('error:' + response.message)  
    *        }else{
@@ -356,10 +353,10 @@ window.FFW = {
 
 ## Ethereum DApps
 
-  Firefly wallet v3.x currently support Ethereum and Stellar DApps.
+  qlchain runtime v3.x currently support Ethereum and Stellar DApps.
 
-  Firefly wallet DApp browser has the compatibility of Metamask, your DApp should naturally work with Firefly wallet if it is compatible with Metamask as well.
+  qlchain runtime DApp browser has the compatibility of Metamask, your DApp should naturally work with qlchain runtime if it is compatible with Metamask as well.
 
-  The interaction between Firefly wallet DApp browser and DApp is base on [EIP1102](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1102.md). DApp must implement `EIP1102` to get user account and send transaction.
+  The interaction between qlchain runtime DApp browser and DApp is base on [EIP1102](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1102.md). DApp must implement `EIP1102` to get user account and send transaction.
 
   You can also check the related [documentation](https://github.com/MetaMask/faq/blob/09281ac3dfcc19703f25fc9c960d2b7c65a0a4b3/DEVELOPERS.md#partly_sunny-web3---ethereum-browser-environment-check) of metamask

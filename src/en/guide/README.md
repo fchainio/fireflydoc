@@ -1,10 +1,10 @@
 ## Introduction
 
-Firefly wallet is a decentralized wallet based on Stellar network, which supports Android, iOS and desktop platform.
+qlchain runtime is a decentralized runtime based on Stellar network, which supports Android, iOS and desktop platform.
 
-Firefly wallet provides "bring your own DAPP" mode, which enables developers to create their own DAPP. After registering on Firefly platform and publishing DAPP to Firefly wallet, your DAPP is ready for end users.
+qlchain runtime provides "bring your own DAPP" mode, which enables developers to create their own DAPP. After registering on qlchain platform and publishing DAPP to qlchain runtime, your DAPP is ready for end users.
 
-DAPP in Firefly wallet is using webview. Leveraging JS Bridge provided wallet, DAPP can interact with wallet in many ways, like: getting wallet version, getting public key of current user or starting a payment, etc.
+DAPP in qlchain runtime is using webview. Leveraging JS Bridge provided runtime, DAPP can interact with runtime in many ways, like: getting runtime version, getting public key of current user or starting a payment, etc.
 
 
 ## Quick Start
@@ -18,7 +18,7 @@ DAPP in Firefly wallet is using webview. Leveraging JS Bridge provided wallet, D
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>FireFly Demo</title>
+    <title>qlchain Demo</title>
   </head>
   <body>
     <button id="btn" onclick="btnClick()">button</button>
@@ -38,6 +38,6 @@ function btnClick(){
 
 ### deploy example.html to web server(like nginx), get accessable address
 
-### open Firefly wallet - discovery page, add accessable address, then you may open your DAPP now.
+### open qlchain runtime - discovery page, add accessable address, then you may open your DAPP now.
 
 ### Enjoy!

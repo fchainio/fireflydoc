@@ -16,10 +16,6 @@ module.exports = [
     link: '/en/stellar/',
   },
   {
-    text: 'JS SDK',
-    link: 'https://github.com/imloama/fireflywallet-api'
-  },
-  {
     text: 'Stellar Official',
     link: 'https://stellarcn.org/'
   }

@@ -1,35 +1,35 @@
 ## Example
 
-You have to open below link in Firefly wallet.
+You have to open below link in qlchain runtime.
 https://t.cn/Re3xw6q
-How to add: Choose 『Discovery』 in Firefly wallet, click the icon at the top right-hand corner, then click 『+』, input name and paste link above to make addition done. Return to 『Discovery』 to click the new added DAPP to open it.
-Source code is [here](https://github.com/fchainio/firefly-examples/tree/master/dapp)
+How to add: Choose 『Discovery』 in qlchain runtime, click the icon at the top right-hand corner, then click 『+』, input name and paste link above to make addition done. Return to 『Discovery』 to click the new added DAPP to open it.
+Source code is [here](https://github.com/fchainio/qlchain-examples/tree/master/dapp)
 
-If your project based on `nodejs`, you can install official library called [fireflywallet-api](https://github.com/fchainio/fireflywallet-api), and the reference exmaple project is [an example of vue project] (https://github.com/fchainio/firefly-examples/tree/master/dapp/vue_demo).
+If your project based on `nodejs`, you can install official library called [qlchainruntime-api](https://github.com/fchainio/qlchainruntime-api), and the reference exmaple project is [an example of vue project] (https://github.com/fchainio/qlchain-examples/tree/master/dapp/vue_demo).
 
 
-FFW Object will be injected when you open the page in Firefly wallet, so you may know if this page is opend in wallet or not by checking the existence of windows.FFW object.
+qlchain Object will be injected when you open the page in qlchain runtime, so you may know if this page is opend in runtime or not by checking the existence of windows.qlchain object.
 
 ## Enable dev mode
-Dev mode is not active by default, to activate it, click "My" - "Settings" - "About", click the firefly icon multiple times.
+Dev mode is not active by default, to activate it, click "My" - "Settings" - "About", click the qlchain icon multiple times.
 
-## Debug using Firefly wallet
-Open 『Discovery』 page in Firefly wallet, click 『+』 at the top right-hand corner, input DAPP name and access link, then the new added DAPP is visible under "Custom Application" column. You can click the icon to open it.
+## Debug using qlchain runtime
+Open 『Discovery』 page in qlchain runtime, click 『+』 at the top right-hand corner, input DAPP name and access link, then the new added DAPP is visible under "Custom Application" column. You can click the icon to open it.
 
 
 ## Debug using desktop device
-Firefly desktop version provides the same function with the mobile version, but with more convenient way to debug. You can test all APIs except some only available to mobile devices, like: scanning, sharing, etc.
+qlchain desktop version provides the same function with the mobile version, but with more convenient way to debug. You can test all APIs except some only available to mobile devices, like: scanning, sharing, etc.
 How to:
 Click 『Discovery』 in navigation bar, click add button in "Custom Applications", put in name and application access link then save.
 Click the new added DAPP, `Chrome developer tools` will pop up.
 
 
-## Acquire version info about wallet
+## Acquire version info about runtime
 
- Return current version info of Firefly wallet, String type, like: '2.1.8'.
+ Return current version info of qlchain runtime, String type, like: '2.1.8'.
 
 ```
-  window.FFW.version    
+  window.qlchain.version    
 ```
 
  Value returned
@@ -38,12 +38,12 @@ Click the new added DAPP, `Chrome developer tools` will pop up.
 '2.1.8'
 ```
 
-## Acquire platform info of wallet OS
+## Acquire platform info of runtime OS
 
- Return the OS info of the device on which wallet rest, String type, like: Android or iOS.
+ Return the OS info of the device on which runtime rest, String type, like: Android or iOS.
 
 ```
-window.FFW.platform
+window.qlchain.platform
 ```
 
  Value returned
@@ -57,7 +57,7 @@ window.FFW.platform
  Return the UUID of current device(data after SHA256 operation), String type.
 
 ```
-window.FFW.uuid
+window.qlchain.uuid
 ```
 
  Value returned
@@ -66,12 +66,12 @@ window.FFW.uuid
 '01a0865f4c2687d90f70f32b01c1e258bfd7aa6c7ccc35339dfacd72f5018bb8'
 ```
 
-## Acquire the locale of wallet
+## Acquire the locale of runtime
 
- Return the locale value of current wallet, String type.
+ Return the locale value of current runtime, String type.
 
 ```
-window.FFW.locale
+window.qlchain.locale
 ```
 
  Value returned
@@ -85,7 +85,7 @@ window.FFW.locale
  Return current user address, String type, like: `GCENG5GLJ35GPJZQM3YJSFL3GMQ57MA5U6ZAAE6V4XIFVXFPY5MS5Q65`.
 
 ```
-window.FFW.address
+window.qlchain.address
 ```
 
  Value returned
@@ -97,16 +97,16 @@ window.FFW.address
 
 ## Acquire user accountName
 
- Return current user accountName, String type, like: `FireFly Goose`
+ Return current user accountName, String type, like: `qlchain Goose`
 
 ```
-window.FFW.accountName
+window.qlchain.accountName
 ```
 
   Value returned
 
 ```
-'FireFly Goose'
+'qlchain Goose'
 ```
 
 ## Acquire user horizon server path
@@ -114,7 +114,7 @@ window.FFW.accountName
   Return user horizon server path, String type, like: `https://horizon.stellar.org`
 
 ```
-window.FFW.horizonUrl
+window.qlchain.horizonUrl
 ```
 
   Value returned
@@ -128,7 +128,7 @@ window.FFW.horizonUrl
   Return network passphrase of user horizon
 
 ```
-window.FFW.network
+window.qlchain.network
 ```
 
   Value returned
@@ -142,7 +142,7 @@ window.FFW.network
 
  Return the balance info of current user. ` balances(callback)`
  You can issuer assets on Stellar network, so one user may have lots of different assets. You can get all assets info one user holds with this method.
- This method get balance info from the horizon wallet appointed, and return.
+ This method get balance info from the horizon runtime appointed, and return.
 
 - Parameters description:
 - `callback` is the callback function after balance method gets executed, which could be a function name or a function.
@@ -160,7 +160,7 @@ window.FFW.network
 > Code sample
 
 ```
-window.FFW.balances(function(response){
+window.qlchain.balances(function(response){
         if(response.code === 'fail'){
              console.log('error:' + response.message)  
              alert('Assets info query fail! '+response.message)
@@ -224,13 +224,13 @@ After payment execution gets done, `callback` will welcome an object, content li
 Code sample
 
 ```
-window.FFW.pay({
+window.qlchain.pay({
          destination: 'GBFGPA6MELXHEKWPJW75LOMC4CHGHTZ67LOWUGTUUILMXMZZGFLTO3X7', 
          code: 'XFF', 
          issuer: 'GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF', 
          amount: 1, 
          memo_type: 'TEXT',  
-         memo: 'Hello,FFW'
+         memo: 'Hello,qlchain'
        }, function(response){
            if(response.code === 'fail'){
              console.log('error:' + response.message)  
@@ -272,10 +272,10 @@ WIP...
 Code sample
 
 ```
-let data = {name: 'firefly wallet dapp',desc:'the first hello in the world'}
+let data = {name: 'qlchain runtime dapp',desc:'the first hello in the world'}
 data = JSON.stringify(data)
 console.log('The data to sign:' +data)
-window.FFW.sign(data, function(response){
+window.qlchain.sign(data, function(response){
     if(response.code === 'fail'){
         console.log('error:' + response.message)  
     }else{
@@ -314,7 +314,7 @@ Code sample
 ```
 var code = 'XFF';
 var issuer = 'GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF';
-window.FFW.trust(code,issuer,function(response){
+window.qlchain.trust(code,issuer,function(response){
    if(response.code === 'fail'){
     console.log('error:' + response.message)  
        alert('Trust failed')
@@ -331,7 +331,7 @@ window.FFW.trust(code,issuer,function(response){
 
 
  ` signXDR(data, message, callback)`
- `signXDR` is a underlying method. You may perform advanced operation if API provided by Firefly wallet can not meet your requirement.
+ `signXDR` is a underlying method. You may perform advanced operation if API provided by qlchain runtime can not meet your requirement.
  Prerequisite: You have to understand the underlying SDK of Stellar, which requires you to be able to create a Transaction package manually. You would have to sign the Transaction which you created in XDR format, then submit it to horizon.
  Parameters description:
  `data` is string, the Transaction you created in XDR format.
@@ -352,7 +352,7 @@ Code sample
 
 ```
 var xdr = 'AAAAAEpng8wi7nIqz02/1bmC4I5jzz763WoadKIWy7M5MVc3AAAAZACHjkkAAAABAAAAAAAAAAAAAAABAAAAAAAAAAoAAAALaG9tZV9kb21haW4AAAAAAQAAABBodHRwOi8vZmNoYWluLmlvAAAAAAAAAAA='
- window.FFW.signXDR(xdr, "update domain name", function(response){
+ window.qlchain.signXDR(xdr, "update domain name", function(response){
   if(response.code === 'fail'){
     console.log('error:' + response.message)  
     alert('signXDR Failed!'+response.message)
@@ -384,7 +384,7 @@ var xdr = 'AAAAAEpng8wi7nIqz02/1bmC4I5jzz763WoadKIWy7M5MVc3AAAAZACHjkkAAAABAAAAA
 Code sample
 
 ```
-window.FFW.scan(function(response){
+window.qlchain.scan(function(response){
   if(response.code === 'fail'){
     console.log('error:' + response.message)  
   }else{
@@ -426,7 +426,7 @@ let options = {
    message: 'picture share',
    files: ['data:image/png;base64,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']
 }
-window.FFW.share(options,function(response){
+window.qlchain.share(options,function(response){
   if(response.code === 'fail'){
     console.log('error:' + response.message)  
   }else{

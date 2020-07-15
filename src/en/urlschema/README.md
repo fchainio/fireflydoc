@@ -1,8 +1,8 @@
 ## URL Schema protocol
 
 Protocols supported by default:
- 1. xff://open.fchain.io
-  - scheme:xff  
+ 1. qlchain://open.fchain.io
+  - scheme:qlchain  
   - host:open.fchain.io
  2. web+stellar://
    - ref to[SEP0007](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0007.md)
@@ -14,23 +14,23 @@ Application scenarios supported
 
 |Operation name|Protocol applied|Implemented or not|
 |:---|:---|:---|
-|Start APP|XFF|√|
-|Create wallet account|XFF|√|
-|Show quotes|XFF|√|
-|Add contact|XFF|√|
-|Trust|XFF, web+stellar|√|
-|Payment|XFF, web+stellar|√|
-|Pathpayment|XFF, web+stellar|√|
-|Sign TX|XFF, web+stellar|√|
-|Deposit|XFF|√|
-|Withdraw|XFF|√|
-|Set inflation pool|XFF|√|
-|Open DAPP detail|XFF|√|
-|Open DAPP|XFF|√|
-|Open red package|XFF|√|
-|Claim red package|XFF|√|
-|Check red package records, send red package|XFF|√|
-|Open certain asset detail|XFF|√|
+|Start APP|qlchain|√|
+|Create runtime account|qlchain|√|
+|Show quotes|qlchain|√|
+|Add contact|qlchain|√|
+|Trust|qlchain, web+stellar|√|
+|Payment|qlchain, web+stellar|√|
+|Pathpayment|qlchain, web+stellar|√|
+|Sign TX|qlchain, web+stellar|√|
+|Deposit|qlchain|√|
+|Withdraw|qlchain|√|
+|Set inflation pool|qlchain|√|
+|Open DAPP detail|qlchain|√|
+|Open DAPP|qlchain|√|
+|Open red package|qlchain|√|
+|Claim red package|qlchain|√|
+|Check red package records, send red package|qlchain|√|
+|Open certain asset detail|qlchain|√|
 |Scan QR to login|https|√|
 
 ---
@@ -41,24 +41,24 @@ Application scenarios supported
 ---
 ## Start App
 - Protocol URL
-  - xff://open.fchain.io/app/start/
+  - qlchain://open.fchain.io/app/start/
 - Protocol example
-``` xff://open.fchain.io/app/start/```
+``` qlchain://open.fchain.io/app/start/```
 - Parameters description
   - no parameters needed
 
 ---
-## Wallet
-### Create or import wallet
+## runtime
+### Create or import runtime
 - Protocol URL
-  - xff://open.fchain.io/wallet/create/
+  - qlchain://open.fchain.io/runtime/create/
 - Protocol example
-``` xff://open.fchain.io/wallet/create/```
+``` qlchain://open.fchain.io/runtime/create/```
 - Parameters description
 
 |name|type|required|description|  
 |-----|-----|-----|----|
-|name|string|false|wallet name|
+|name|string|false|runtime name|
 |mnemonic|string|false|mnemonic|
 |seed|string|false|secret seed|
 ---
@@ -66,10 +66,10 @@ Application scenarios supported
 ## Quotes
 ### Open trade pair(k line)
 - Protocol URL
-  - xff://open.fchain.io/market/kline
+  - qlchain://open.fchain.io/market/kline
 - Protocol example
 ```
-xff://open.fchain.io/market/kline?basecode=XLM&baseissuer=&countercode=XCN&counterissuer=GCNY5OXYSY4FKHOPT2SPOQZAOEIGXB5LBYW3HVU3OWSTQITS65M5RCNY
+qlchain://open.fchain.io/market/kline?basecode=XLM&baseissuer=&countercode=XCN&counterissuer=GCNY5OXYSY4FKHOPT2SPOQZAOEIGXB5LBYW3HVU3OWSTQITS65M5RCNY
 ```
 - Parameters description
 
@@ -82,10 +82,10 @@ xff://open.fchain.io/market/kline?basecode=XLM&baseissuer=&countercode=XCN&count
 
 ## Add custom trade pair
 - Protocol URL
-  - xff://open.fchain.io/market/addpair
+  - qlchain://open.fchain.io/market/addpair
 - Protocol example
 ```
-xff://open.fchain.io/market/addpair?basecode=XLM&baseissuer=&countercode=XCN&counterissuer=GCNY5OXYSY4FKHOPT2SPOQZAOEIGXB5LBYW3HVU3OWSTQITS65M5RCNY
+qlchain://open.fchain.io/market/addpair?basecode=XLM&baseissuer=&countercode=XCN&counterissuer=GCNY5OXYSY4FKHOPT2SPOQZAOEIGXB5LBYW3HVU3OWSTQITS65M5RCNY
 ```
 - Parameters description
 
@@ -100,9 +100,9 @@ xff://open.fchain.io/market/addpair?basecode=XLM&baseissuer=&countercode=XCN&cou
 ## Dapp
 ## Open DAPP page at discovery tab
 - Protocol URL
-  - xff://open.fchain.io/discovery/dappinfo 
+  - qlchain://open.fchain.io/discovery/dappinfo 
 - Protocol example
-```xff://open.fchain.io/discovery/dappinfo?title=dappname&appId=000001 ```
+```qlchain://open.fchain.io/discovery/dappinfo?title=dappname&appId=000001 ```
 - Parameters description
 
 |name|type|required|description|  
@@ -112,10 +112,10 @@ xff://open.fchain.io/market/addpair?basecode=XLM&baseissuer=&countercode=XCN&cou
 
 ### Open one specific DAPP
 - Protocol URL
-  - xff://open.fchain.io/dapp/container 
+  - qlchain://open.fchain.io/dapp/container 
 - Protocol example
 ```
-xff://open.fchain.io/dapp/container?title=dappname&appId=000001&url=http://fchain.io&color=#313035
+qlchain://open.fchain.io/dapp/container?title=dappname&appId=000001&url=http://fchain.io&color=#313035
 ```
 - Parameters description, other parameters can also be added so that DAPP could use them to perform its own business logic.
 
@@ -130,10 +130,10 @@ xff://open.fchain.io/dapp/container?title=dappname&appId=000001&url=http://fchai
 ## Add contact
 ### Add contact by opening add contact page
 - Protocol URL
-  - XFF://open.fchain.io/contacts/create
+  - qlchain://open.fchain.io/contacts/create
 - Protocol example
 ```
-XFF://open.fchain.io/contacts/create?name=开放平台&account=GBUKVELXNRMYA4ZZXCVDPNCKZNZ2AOU5IE45ASAFGPF7EDTZCVJU42UA&memo_type=MEMO_TEXT&memo=123
+qlchain://open.fchain.io/contacts/create?name=开放平台&account=GBUKVELXNRMYA4ZZXCVDPNCKZNZ2AOU5IE45ASAFGPF7EDTZCVJU42UA&memo_type=MEMO_TEXT&memo=123
 ```
 - Parameters description
 
@@ -148,10 +148,10 @@ XFF://open.fchain.io/contacts/create?name=开放平台&account=GBUKVELXNRMYA4ZZX
 ## Trust
 ### Trust certain asset by opening trust page, providing alike FFW.trust function in JSBridge. Return the result(hash or error) to callback if there is one
 - Protocol URL
-  - XFF://open.fchain.io/trust
+  - qlchain://open.fchain.io/trust
 - Protocol example
 ```
-XFF://open.fchain.io/trust?code=XCN&issuer=GCNY5OXYSY4FKHOPT2SPOQZAOEIGXB5LBYW3HVU3OWSTQITS65M5RCNY&callback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
+qlchain://open.fchain.io/trust?code=XCN&issuer=GCNY5OXYSY4FKHOPT2SPOQZAOEIGXB5LBYW3HVU3OWSTQITS65M5RCNY&callback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
 
 web+stellar:trust?code=XCN&issuer=GCNY5OXYSY4FKHOPT2SPOQZAOEIGXB5LBYW3HVU3OWSTQITS65M5RCNYcallback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
 ```
@@ -180,13 +180,13 @@ web+stellar:trust?code=XCN&issuer=GCNY5OXYSY4FKHOPT2SPOQZAOEIGXB5LBYW3HVU3OWSTQI
 ## Payment
 ### Open payment page, user confirm whether to send asset to other account, callback is supported.
 - Protocols
-  - XFF
+  - qlchain
   - web+stellar
 - Protocol example
 ```
-XFF://open.fchain.io/pay?destination=GAD2EAYW6UXQPY6FLEPKOZEABVRU42SQAQVXQ5VOOAERNSTLXK3Q5UZ6&amount=1&asset_code=XFF&asset_issuer=GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF&memo_type=MEMO_TEXT&memo=pay&msg=test&callback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
+qlchain://open.fchain.io/pay?destination=GAD2EAYW6UXQPY6FLEPKOZEABVRU42SQAQVXQ5VOOAERNSTLXK3Q5UZ6&amount=1&asset_code=qlchain&asset_issuer=GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMqlchain&memo_type=MEMO_TEXT&memo=pay&msg=test&callback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
 
-web+stellar:pay?destination=GAD2EAYW6UXQPY6FLEPKOZEABVRU42SQAQVXQ5VOOAERNSTLXK3Q5UZ6&amount=1&asset_code=XFF&asset_issuer=GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF&memo_type=MEMO_TEXT&memo=pay&msg=test&callback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
+web+stellar:pay?destination=GAD2EAYW6UXQPY6FLEPKOZEABVRU42SQAQVXQ5VOOAERNSTLXK3Q5UZ6&amount=1&asset_code=qlchain&asset_issuer=GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMqlchain&memo_type=MEMO_TEXT&memo=pay&msg=test&callback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
 ```
 - Parameters description
 
@@ -216,12 +216,12 @@ web+stellar:pay?destination=GAD2EAYW6UXQPY6FLEPKOZEABVRU42SQAQVXQ5VOOAERNSTLXK3Q
 ## Pathpayment
 ### User could choose different assets to pay, failure ratio exists, basically the same effect as FFW.pathpayment
 - Protocols
-  - XFF or web+stellar
+  - qlchain or web+stellar
 - Protocol example
 ```
-XFF://open.fchain.io/pathpay?destination=GAD2EAYW6UXQPY6FLEPKOZEABVRU42SQAQVXQ5VOOAERNSTLXK3Q5UZ6&amount=1&asset_code=XFF&asset_issuer=GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF&memo_type=MEMO_TEXT&memo=pay&msg=test&callback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
+qlchain://open.fchain.io/pathpay?destination=GAD2EAYW6UXQPY6FLEPKOZEABVRU42SQAQVXQ5VOOAERNSTLXK3Q5UZ6&amount=1&asset_code=qlchain&asset_issuer=GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMqlchain&memo_type=MEMO_TEXT&memo=pay&msg=test&callback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
 
-web+stellar://open.fchain.io/pathpay?destination=GAD2EAYW6UXQPY6FLEPKOZEABVRU42SQAQVXQ5VOOAERNSTLXK3Q5UZ6&amount=1&asset_code=XFF&asset_issuer=GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF&memo_type=MEMO_TEXT&memo=pay&msg=test&callback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
+web+stellar://open.fchain.io/pathpay?destination=GAD2EAYW6UXQPY6FLEPKOZEABVRU42SQAQVXQ5VOOAERNSTLXK3Q5UZ6&amount=1&asset_code=qlchain&asset_issuer=GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMqlchain&memo_type=MEMO_TEXT&memo=pay&msg=test&callback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
 ```
 - Parameters description
 
@@ -251,11 +251,11 @@ web+stellar://open.fchain.io/pathpay?destination=GAD2EAYW6UXQPY6FLEPKOZEABVRU42S
 ## Sign TX
 ### Sign TX data recieved, user may choose to submit after signing it or immediately
 - Protocol
-  - XFF
+  - qlchain
   - web+stellar
 - Protocol example
 ```
-XFF://open.fchain.io/tx?xdr=AAAAAAeiAxb1LwfjxVkep2SADWNOalAEK3h2rnAJFsprurcOAAAAZADOysIAAAG7AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAABua1i%2BivlQAAAAAAAQAAAAAAAAABAAAAAAeiAxb1LwfjxVkep2SADWNOalAEK3h2rnAJFsprurcOAAAAAAAAAAAAmJaAAAAAAAAAAAA%3D&msg=test&pubkey=GAD2EAYW6UXQPY6FLEPKOZEABVRU42SQAQVXQ5VOOAERNSTLXK3Q5UZ6&callback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
+qlchain://open.fchain.io/tx?xdr=AAAAAAeiAxb1LwfjxVkep2SADWNOalAEK3h2rnAJFsprurcOAAAAZADOysIAAAG7AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAABua1i%2BivlQAAAAAAAQAAAAAAAAABAAAAAAeiAxb1LwfjxVkep2SADWNOalAEK3h2rnAJFsprurcOAAAAAAAAAAAAmJaAAAAAAAAAAAA%3D&msg=test&pubkey=GAD2EAYW6UXQPY6FLEPKOZEABVRU42SQAQVXQ5VOOAERNSTLXK3Q5UZ6&callback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
 
 web+stellar:tx?xdr=AAAAAAeiAxb1LwfjxVkep2SADWNOalAEK3h2rnAJFsprurcOAAAAZADOysIAAAG7AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAABua1i%2BivlQAAAAAAAQAAAAAAAAABAAAAAAeiAxb1LwfjxVkep2SADWNOalAEK3h2rnAJFsprurcOAAAAAAAAAAAAmJaAAAAAAAAAAAA%3D&msg=test&pubkey=GAD2EAYW6UXQPY6FLEPKOZEABVRU42SQAQVXQ5VOOAERNSTLXK3Q5UZ6&&callback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
 ```
@@ -267,7 +267,7 @@ web+stellar:tx?xdr=AAAAAAeiAxb1LwfjxVkep2SADWNOalAEK3h2rnAJFsprurcOAAAAZADOysIAA
 |msg|string|false|notification message|
 |pubkey|string|false|specified account to sign, used in multisign|
 |network|string|false|Stellar network, `public` or `test`|
-|auto|boolean|false|using walletg to send to Stellar network, `true` by default. will sign and submit result in XDR format to callback if `false`|
+|auto|boolean|false|using runtimeg to send to Stellar network, `true` by default. will sign and submit result in XDR format to callback if `false`|
 |callback|string|false|callback address|
 - callback address, submit parameters, POST method, `Content-Type: application/json`
 ```
@@ -289,10 +289,10 @@ web+stellar:tx?xdr=AAAAAAeiAxb1LwfjxVkep2SADWNOalAEK3h2rnAJFsprurcOAAAAZADOysIAA
 ## Deposit
 ### Open deposit page, perform query according to assets in protocol or custom assets. If `callback` is provided, then all deposit data will submit to `callback` after user clicked confirm.
 - Protocol
-  - XFF
+  - qlchain
 - Protocol example
 ```
-XFF://open.fchain.io/deposit?asset_code=ETH&asset_issuer=GBETHKBL5TCUTQ3JPDIYOZ5RDARTMHMEKIO2QZQ7IOZ4YC5XV3C2IKYU&
+qlchain://open.fchain.io/deposit?asset_code=ETH&asset_issuer=GBETHKBL5TCUTQ3JPDIYOZ5RDARTMHMEKIO2QZQ7IOZ4YC5XV3C2IKYU&
 callback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
 ```
 - Parameters description
@@ -328,10 +328,10 @@ callback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
 ## Withdraw
 ### Open withdarw page, get information about address, etc from URL, then finish process after user confirmation
 - Protocol
-  - XFF
+  - qlchain
 - Protocol example
 ```
-XFF://open.fchainlio/withdraw?destination=1MVrxv4712psDBRMwzLAhJTu2jGHeBqU6H&asset_code=BTC&asset_issuer=GATEMHCCKCY67ZUCKTROYN24ZYT5GK4EQZ65JJLDHKHRUZI3EUEKMTCH&amount=1&memo=123&callback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
+qlchain://open.fchainlio/withdraw?destination=1MVrxv4712psDBRMwzLAhJTu2jGHeBqU6H&asset_code=BTC&asset_issuer=GATEMHCCKCY67ZUCKTROYN24ZYT5GK4EQZ65JJLDHKHRUZI3EUEKMTCH&amount=1&memo=123&callback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
 ```
 - Parameters description
 
@@ -360,10 +360,10 @@ XFF://open.fchainlio/withdraw?destination=1MVrxv4712psDBRMwzLAhJTu2jGHeBqU6H&ass
 ## Set inflation pool
 ### Set inflation pool for current account
 - Protocol
-  - XFF
+  - qlchain
 - Protocol example
 ```
-XFF://open.fchainlio/pool?destination=GDCHDRSDOBRMSUDKRE2C4U4KDLNEATJPIHHR2ORFL5BSD56G4DQXL4VW&msg=test&callback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
+qlchain://open.fchainlio/pool?destination=GDCHDRSDOBRMSUDKRE2C4U4KDLNEATJPIHHR2ORFL5BSD56G4DQXL4VW&msg=test&callback=https%3A%2F%2Fopen.fchain.io%2Ftrust%2Fcallback%2F123
 ```
 - Parameters description
 
@@ -386,19 +386,19 @@ XFF://open.fchainlio/pool?destination=GDCHDRSDOBRMSUDKRE2C4U4KDLNEATJPIHHR2ORFL5
 ---
 
 ## Open red pocket
-### Open red pocket, `appid=000003` for red pocket, opening it will be calling `xff://open.fchain.io/dapp/container?appId=000003`
+### Open red pocket, `appid=000003` for red pocket, opening it will be calling `qlchain://open.fchain.io/dapp/container?appId=000003`
 - Protocol
-  - XFF
+  - qlchain
 - Protocol example
-``` xff://open.fchain.io/hb```
+``` qlchain://open.fchain.io/hb```
 ---
 
 ## Claim red pocket
 ### Add parameter `k` on the basis of above URL, just pass k as parameter when opening red pocket DAPP
 - Protocol
-  - XFF
+  - qlchain
 - Protocol example
-``` xff://open.fchain.io//hb/dapp?k=红包口令```
+``` qlchain://open.fchain.io//hb/dapp?k=红包口令```
 - Parameters description
 
 |name|type|required|description|
@@ -409,9 +409,9 @@ XFF://open.fchainlio/pool?destination=GDCHDRSDOBRMSUDKRE2C4U4KDLNEATJPIHHR2ORFL5
 ## search red pocket records or send red pocket
 ### Add parameter `v` on the basis of above URL, just pass v as parameter when opening red pocket DAPP
 - Protocol
-  - XFF
+  - qlchain
 - Protocol example
-``` xff://open.fchain.io/hb?v=log```
+``` qlchain://open.fchain.io/hb?v=log```
 - Parameters description
 
 |name|type|required|description|
@@ -422,10 +422,10 @@ XFF://open.fchainlio/pool?destination=GDCHDRSDOBRMSUDKRE2C4U4KDLNEATJPIHHR2ORFL5
 ## Open asset detail
 ### Open detail page of one certain asset
 - Protocol
-  - XFF
+  - qlchain
 - Protocol example
 ```
-xff://open.fchain.io/asset?asset_code=ETH&asset_issuer=GBETHKBL5TCUTQ3JPDIYOZ5RDARTMHMEKIO2QZQ7IOZ4YC5XV3C2IKYU
+qlchain://open.fchain.io/asset?asset_code=ETH&asset_issuer=GBETHKBL5TCUTQ3JPDIYOZ5RDARTMHMEKIO2QZQ7IOZ4YC5XV3C2IKYU
 ```
 - Parameters description
 

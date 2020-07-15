@@ -1,10 +1,10 @@
 ## 介绍
 
-萤火钱包是基于恒星网络的去中心化钱包，支持安卓、IOS、桌面平台。
+泉链运行环境是基于恒星网络的去中心化运行环境，支持安卓、IOS、桌面平台。
 
-萤火钱包的DApp支持第三方webapp应用，开发者可以开发自己的DApp，部署到服务器上后，在萤火平台注册并发布应用到萤火钱包上，供其他用户使用。
+泉链运行环境的DApp支持第三方webapp应用，开发者可以开发自己的DApp，部署到服务器上后，在泉链平台注册并发布应用到泉链运行环境上，供其他用户使用。
 
-萤火钱包的DApp主要是采用webview技术展现，在钱包提供相应的JS Bridge，从而为DApp提供与钱包交互的功能，包括：获取钱包版本、当前用户公钥、发起支付等功能。
+泉链运行环境的DApp主要是采用webview技术展现，在运行环境提供相应的JS Bridge，从而为DApp提供与运行环境交互的功能，包括：获取运行环境版本、当前用户公钥、发起支付等功能。
 
 
 ## 快速上手
@@ -18,7 +18,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>FireFly Demo</title>
+    <title>qlchain Demo</title>
   </head>
   <body>
     <button id="btn" onclick="btnClick()">button</button>
@@ -38,6 +38,6 @@ function btnClick(){
 
 ### 将example.html部署到服务器(nginx等)，获取访问地址
 
-### 打开萤火钱包-探索页面，添加example.html的访问地址，即可点击图标打开该DApp了
+### 打开泉链运行环境-探索页面，添加example.html的访问地址，即可点击图标打开该DApp了
 
 ### Enjoy!

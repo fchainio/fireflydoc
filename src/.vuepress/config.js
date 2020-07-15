@@ -1,21 +1,21 @@
 module.exports = {
-  base: '/fireflydoc/',
+  base: '/qlchaindoc/',
   dest: 'docs',
   locales: {
     '/': {
       lang: 'zh-CN', // 将会被设置为 <html> 的 lang 属性
-      title: '萤火钱包文档',
-      description: '萤火钱包文档网站'
+      title: '泉链运行环境文档',
+      description: '泉链运行环境文档网站'
     },
     '/en/': {
       lang: 'en-US',
-      title: 'FireFly Doc',
-      description: 'firefly wallet doc website'
+      title: 'qlchain Doc',
+      description: 'qlchain runtime doc website'
     }
   },
 
   themeConfig: {
-    repo: 'fchainio/fireflydoc',
+    repo: 'qlchain/doc',
     editLinks: true,
     docsDir: 'src',
     locales: {

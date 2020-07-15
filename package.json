@@ -1,16 +1,14 @@
 {
-  "name": "fireflydoc",
+  "name": "qlchain",
   "version": "1.0.0",
-  "description": "firefly doc website",
+  "description": "qlchain doc website",
   "main": "index.js",
-  "repository": "git@github.com:fchainio/fireflydoc.git",
-  "author": "imloama <imloama@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "node_modules/.bin/vuepress dev src",
     "build": "node_modules/.bin/vuepress build src"
   },
   "devDependencies": {
-    "vuepress": "^0.14.11"
+    "vuepress": "^1.5.2"
   }
 }

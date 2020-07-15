@@ -1,11 +1,8 @@
 ## JS Bridge接口协议
 
-钱包给JS（即DAPP）提供的原生能力
+运行环境给JS（即DAPP）提供的原生能力
 
 - 取消back recovery两个接口
-
-## 通过npm引用帮助类库
-- 可以通过[fireflywallet-api](https://github.com/fchainio/fireflywallet-api)，通过NPM或yarn引入，调用以下接口
 
 
 ### 所有接口函数说明
@@ -28,32 +25,32 @@
 /**
  * 接口根对象
  */
-window.FFW = {
+window.qlchain = {
 
   /**
-   * 当前钱包版本号（v2.1.0添加，未正式上线）
+   * 当前运行环境版本号（v2.1.0添加，未正式上线）
    */
   version:'2.2.6',
   /**
-   * 当前钱包的操作系统，ios或android，（v2.1.0添加）
+   * 当前运行环境的操作系统，ios或android，（v2.1.0添加）
    */
   platform: 'ios',
 
   /**
    * 属性，String类型
-   * 当前打开DAPP的钱包的登陆账户公钥地址
+   * 当前打开DAPP的运行环境的登陆账户公钥地址
    */
   address: 'GCENG5GLJ35GPJZQM3YJSFL3GMQ57MA5U6ZAAE6V4XIFVXFPY5MS5Q65',
   /**
    * 属性，Array类型
-   * 当前打开DAPP的钱包的联系人信息
+   * 当前打开DAPP的运行环境的联系人信息
    * 2.4版本后取消
    */
   contacts: [],
 
   /**
    * 属性，Array类型
-   * 当前打开DAPP的钱包的地址簿
+   * 当前打开DAPP的运行环境的地址簿
    * 2.4版本后取消
    */
   myaddresses: [],
@@ -64,7 +61,7 @@ window.FFW = {
   uuid = '设备的UUID信息加密信息',
 
  /**
-  * 当前钱包的语言设置
+  * 当前运行环境的语言设置
   */
   locale = 'zh_cn';
 
@@ -100,13 +97,13 @@ window.FFW = {
    *            data:'返回结果数据，是object类型，可能为null'
    *          }
    * 示例：
-   *   FFW.pay({
+   *   qlchain.pay({
    *      destination: 'GBFGPA6MELXHEKWPJW75LOMC4CHGHTZ67LOWUGTUUILMXMZZGFLTO3X7', 
    *      code: 'XFF', 
    *      issuer: 'GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF', 
    *      amount: 100, 
    *      memo_type: 'TEXT', 
-   *      memo: 'Hello,FFW'
+   *      memo: 'Hello,qlchain'
    *    }, function(response){
    *        if(response.code === 'fail'){
    *          console.log('error:' + response.message)  
@@ -138,13 +135,13 @@ window.FFW = {
    *            data:'返回结果数据，是object类型，可能为null'
    *          }
    * 示例：
-   *   FFW.pathPayment({
+   *   qlchain.pathPayment({
    *      destination: 'GBFGPA6MELXHEKWPJW75LOMC4CHGHTZ67LOWUGTUUILMXMZZGFLTO3X7', 
    *      code: 'XFF', 
    *      issuer: 'GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF', 
    *      amount: 100, 
    *      memo_type: 'TEXT', 
-   *      memo: 'Hello,FFW'
+   *      memo: 'Hello,qlchain'
    *    }, function(response){
    *        if(response.code === 'fail'){
    *          console.log('error:' + response.message)  
@@ -168,14 +165,14 @@ window.FFW = {
    *            data:'返回结果数据，是string类型，返回签名完成后数据的base64结果'
    *          }
    *    示例：
-   *    let data = {name: 'firefly wallet dapp'}
+   *    let data = {name: 'qlchain runtime dapp'}
    *    data = JSON.stringify(data)
-   *    FFW.sign(data, function(response){
+   *    qlchain.sign(data, function(response){
    *        if(response.code === 'fail'){
    *          console.log('error:' + response.message)  
    *        }else{
    *          console.log('do success')
-   *          console.log('对{name: "firefly wallet dapp"}签名后的结果：'+response.data)
+   *          console.log('对{name: "qlchain runtime dapp"}签名后的结果：'+response.data)
    *        }
    *    })
    */
@@ -196,7 +193,7 @@ window.FFW = {
    *          }
    * 示例：
    *   let xdr = 'AAAAAEpng8wi7nIqz02/1bmC4I5jzz763WoadKIWy7M5MVc3AAAAZACHjkkAAAABAAAAAAAAAAAAAAABAAAAAAAAAAoAAAALaG9tZV9kb21haW4AAAAAAQAAABBodHRwOi8vZmNoYWluLmlvAAAAAAAAAAA='
-   *   FFW.signXDR(xdr, function(response){
+   *   qlchain.signXDR(xdr, function(response){
    *        if(response.code === 'fail'){
    *          console.log('error:' + response.message)  
    *        }else{
@@ -219,7 +216,7 @@ window.FFW = {
    *            data:'返回结果数据，是string类型，返回对contact和myaddress加密后的数据,可以直接保存该结果到系统中'
    *          }
    * 示例：
-   *   FFW.backup(function(response){
+   *   qlchain.backup(function(response){
    *        if(response.code === 'fail'){
    *          console.log('error:' + response.message)  
    *        }else{
@@ -234,7 +231,7 @@ window.FFW = {
 
   /**
    * 2.4版本后取消
-   * 恢复数据函数，根据backup函数加密备份后的数据，重新恢复到当前钱包中进行覆盖
+   * 恢复数据函数，根据backup函数加密备份后的数据，重新恢复到当前运行环境中进行覆盖
    * @param {string} data 
    * @param {string或function} callback 回调函数，可以是函数名称也可以是函数
    *      回调函数接收一个对象
@@ -244,7 +241,7 @@ window.FFW = {
    *          }
    * 示例：
    *   //其中，data是backup备份操作后拿到的数据
-   *   FFW.recovery(data,function(response){
+   *   qlchain.recovery(data,function(response){
    *        if(response.code === 'fail'){
    *          console.log('error:' + response.message)  
    *        }else{
@@ -268,7 +265,7 @@ window.FFW = {
    * 示例：
    *   let code = 'XFF';
    *   let issuer = 'GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF';
-   *   FFW.trust(code,issuer,function(response){
+   *   qlchain.trust(code,issuer,function(response){
    *        if(response.code === 'fail'){
    *          console.log('error:' + response.message)  
    *        }else{
@@ -283,7 +280,7 @@ window.FFW = {
  /**
   * 打开二维码扫描功能，接收回调函数，用于接收二维码的扫描结果
   * 示例：
-  *   FFW.scan(function(response){
+  *   qlchain.scan(function(response){
   *        if(response.code === 'fail'){
   *          console.log('error:' + response.message)  
   *        }else{
@@ -309,7 +306,7 @@ window.FFW = {
    *      message: '分享图片',
    *      files: ['data:image/png;base64,iVBORw0......K5CYII='], //图片，支持远程图片或base64格式的图片等
    *     };
-   *   FFW.share(options,function(response){
+   *   qlchain.share(options,function(response){
    *        if(response.code === 'fail'){
    *          console.log('error:' + response.message)  
    *        }else{
@@ -351,11 +348,11 @@ window.FFW = {
 }
 ```
 
-## 以太钱包协议
+## 以太运行环境协议
 
-  萤火钱包v3.x版本支持比特币、以太（含ERC20）、恒星三种区块链代币，并且在原有JS API的基础支持恒星生态的基础上，通过web3.js支持以太DApp。
-  DApp浏览器兼容Metamask, 你可以直接把你的Ethereum DApp迁移到 萤火钱包， 甚至不用写任何代码。
+  泉链运行环境v3.x版本支持比特币、以太（含ERC20）、恒星三种区块链代币，并且在原有JS API的基础支持恒星生态的基础上，通过web3.js支持以太DApp。
+  DApp浏览器兼容Metamask, 你可以直接把你的Ethereum DApp迁移到 泉链运行环境， 甚至不用写任何代码。
 
-  萤火钱包DApp浏览器和DApp的交互基于`EIP1102`的标准，DApp必须按照`EIP1102`的方式才可以拿到用户帐号、和执行其他操作。
+  泉链运行环境DApp浏览器和DApp的交互基于`EIP1102`的标准，DApp必须按照`EIP1102`的方式才可以拿到用户帐号、和执行其他操作。
 
   你也可以检查 metamask 的相关[文档](https://github.com/MetaMask/faq/blob/09281ac3dfcc19703f25fc9c960d2b7c65a0a4b3/DEVELOPERS.md#partly_sunny-web3---ethereum-browser-environment-check)

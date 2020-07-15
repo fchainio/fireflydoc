@@ -1,5 +1,5 @@
-# fireflydoc
-firefly doc website
+# qlchaindoc
+qlchain doc website
 
 
 ## Dependencies
@@ -12,8 +12,8 @@ firefly doc website
 
 ### 1. clone this project
 ```
-  git clone git@github.com:fchainio/fireflydoc.git
-  cd fireflydoc
+  git clone git@github.com:fchainio/qlchaindoc.git
+  cd qlchaindoc
 ```
 
 ### 2. install dependencies

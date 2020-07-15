@@ -1,34 +1,34 @@
 ## 示例
 
-下面的连接，需要在钱包中打开。
+下面的连接，需要在泉链运行环境中打开。
 URL为https://t.cn/Re3xw6q
-添加方法：打开萤火钱包APP中的『探索』，点击右上角的图标，再次点击加号，输入名称，添加上述地址即可。返回『探索』页面，点击打开。
-源码见[这里](https://github.com/fchainio/firefly-examples/tree/master/dapp)
+添加方法：打开泉链运行环境APP中的『探索』，点击右上角的图标，再次点击加号，输入名称，添加上述地址即可。返回『探索』页面，点击打开。
+源码见[这里](https://github.com/fchainio/qlchain-examples/tree/master/dapp)
 
-如果你的项目是基于`nodejs`的，可以安装官方类库[fireflywallet-api](https://github.com/fchainio/fireflywallet-api)，参考示例项目[firefly-examples中的vue项目示例](https://github.com/fchainio/firefly-examples/tree/master/dapp/vue_demo)。
+如果你的项目是基于`nodejs`的，可以安装官方类库[qlchainruntime-api](https://github.com/fchainio/qlchainruntime-api)，参考示例项目[qlchain-examples中的vue项目示例](https://github.com/fchainio/qlchain-examples/tree/master/dapp/vue_demo)。
 
-页面在萤火钱包中打开后，萤火钱包会注入FFW对象，可以使用window.FFW访问。可以根据此判断网页是否是在萤火内开启。
+页面在泉链运行环境中打开后，泉链运行环境会注入qlchain对象，可以使用window.qlchain访问。可以根据此判断网页是否是在泉链内开启。
 
 ## 启动APP开发者模式
-萤火钱包APP默认关闭了开发者模式，如果要开启，请打开"我的"-"设置"-"关于"，多次点击萤火图标，即可开启开发者模式
+泉链运行环境APP默认关闭了开发者模式，如果要开启，请打开"我的"-"设置"-"关于"，多次点击泉链图标，即可开启开发者模式
 
-## 使用萤火钱包APP调试
-打开"萤火钱包APP"，打开"探索"页，在右上角打开"+"号按钮，填写名称和应用访问地址，即可在"自定义应用"栏看到添加的应用，可以点击图标打开运行
+## 使用泉链运行环境APP调试
+打开"泉链运行环境APP"，打开"探索"页，在右上角打开"+"号按钮，填写名称和应用访问地址，即可在"自定义应用"栏看到添加的应用，可以点击图标打开运行
 
 
 ## 使用桌面设备调试
-Firefly桌面版本与移动版本功能一致，调试更加方便。除一些移动设备特定功能不能使用，如分享，扫描以外，等其它API均可进行测试。
+qlchain桌面版本与移动版本功能一致，调试更加方便。除一些移动设备特定功能不能使用，如分享，扫描以外，等其它API均可进行测试。
 使用方法：
 点击导航栏『探索』，在自定义应用点击添加按钮。输入名称与应用地址后保存。
 点击添加的DApp，会自动弹出`Chrome developer tools`。
 
 
-## 获取钱包版本信息
+## 获取运行环境版本信息
 
- 返回当前萤火钱包的版本信息，类型为字符串。如当前版本为 '2.1.8'。
+ 返回当前泉链运行环境的版本信息，类型为字符串。如当前版本为 '2.1.8'。
 
 ```
-  window.FFW.version    
+  window.qlchain.version    
 ```
  返回结果
 
@@ -36,12 +36,12 @@ Firefly桌面版本与移动版本功能一致，调试更加方便。除一些�
 '2.1.8'
 ```
 
-## 获取钱包OS平台信息
+## 获取运行环境OS平台信息
 
- 返回当前钱包所在设备的操作系统信息，类型为字符串，当前返回值为android或者ios。
+ 返回当前运行环境所在设备的操作系统信息，类型为字符串，当前返回值为android或者ios。
 
 ```
-window.FFW.platform
+window.qlchain.platform
 ```
 
  返回结果
@@ -52,10 +52,10 @@ window.FFW.platform
 
 ## 获取当前设备的UUID
 
- 返回当前钱包所在的设备的UUID进行SHA256运算后的数据，类型为字符串。
+ 返回当前运行环境所在的设备的UUID进行SHA256运算后的数据，类型为字符串。
 
 ```
-window.FFW.uuid
+window.qlchain.uuid
 ```
 
  返回结果
@@ -64,12 +64,12 @@ window.FFW.uuid
 '01a0865f4c2687d90f70f32b01c1e258bfd7aa6c7ccc35339dfacd72f5018bb8'
 ```
 
-## 获取钱包的语言设置
+## 获取运行环境的语言设置
 
- 返回当前钱包使用的语言选项，类型为字符串。
+ 返回当前运行环境使用的语言选项，类型为字符串。
 
 ```
-window.FFW.locale
+window.qlchain.locale
 ```
 
  返回结果
@@ -83,7 +83,7 @@ window.FFW.locale
  返回当前用户的地址，类型为字符串，如`GCENG5GLJ35GPJZQM3YJSFL3GMQ57MA5U6ZAAE6V4XIFVXFPY5MS5Q65`
 
 ```
-window.FFW.address
+window.qlchain.address
 ```
 
  返回结果
@@ -94,16 +94,16 @@ window.FFW.address
 
 ## 获取用户账户名称
 
- 返回当前用户的账户名称，类型为字符串，如：`萤火小鹅`
+ 返回当前用户的账户名称，类型为字符串，如：`泉链小鹅`
 
 ```
-window.FFW.accountName
+window.qlchain.accountName
 ```
 
   返回结果
 
 ```
-'萤火小鹅'
+'泉链小鹅'
 ```
 
 ## 获取当前用户设置的horizon服务器地址
@@ -111,7 +111,7 @@ window.FFW.accountName
   返回当前用户设置的horizon服务器地址，类型为字符串，如：`https://horizon.stellar.org`
 
 ```
-window.FFW.horizonUrl
+window.qlchain.horizonUrl
 ```
 
   返回结果
@@ -125,7 +125,7 @@ window.FFW.horizonUrl
   返回当前用户设置的horizon服务器的网络密码(network passphrase)
 
 ```
-window.FFW.network
+window.qlchain.network
 ```
 
   返回
@@ -138,7 +138,7 @@ window.FFW.network
 
 返回当前用户的资产信息。` balances(callback)`
 恒星网络可以发行资产。因此用户可以拥有多种资产。使用此方法可以获取当前用户所有的资产信息。
-此方法从钱包指定的horizon获取余额（balance）信息并返回。
+此方法从运行环境指定的horizon获取余额（balance）信息并返回。
 
 - 参数说明
 - `callback`是balance执行后的回调函数。可以是函数名称或者是一个函数。
@@ -156,7 +156,7 @@ window.FFW.network
 > 代码示例
 
 ```
-window.FFW.balances(function(response){
+window.qlchain.balances(function(response){
         if(response.code === 'fail'){
              console.log('error:' + response.message)  
              alert('查询失败！'+response.message)
@@ -220,13 +220,13 @@ window.FFW.balances(function(response){
 代码示例
 
 ```
-window.FFW.pay({
+window.qlchain.pay({
          destination: 'GBFGPA6MELXHEKWPJW75LOMC4CHGHTZ67LOWUGTUUILMXMZZGFLTO3X7', 
          code: 'XFF', 
          issuer: 'GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF', 
          amount: 1, 
          memo_type: 'TEXT',  
-         memo: 'Hello,FFW'
+         memo: 'Hello,qlchain'
        }, function(response){
            if(response.code === 'fail'){
              console.log('error:' + response.message)  
@@ -268,10 +268,10 @@ WIP...
 代码示例
 
 ```
-let data = {name: 'firefly wallet dapp',desc:'the first hello in the world'}
+let data = {name: 'qlchain runtime dapp',desc:'the first hello in the world'}
 data = JSON.stringify(data)
 console.log('待签名的数据:' +data)
-window.FFW.sign(data, function(response){
+window.qlchain.sign(data, function(response){
     if(response.code === 'fail'){
         console.log('error:' + response.message)  
     }else{
@@ -310,7 +310,7 @@ WIP...
 ```
 var code = 'XFF';
 var issuer = 'GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF';
-window.FFW.trust(code,issuer,function(response){
+window.qlchain.trust(code,issuer,function(response){
    if(response.code === 'fail'){
     console.log('error:' + response.message)  
        alert('授信失败')
@@ -327,7 +327,7 @@ window.FFW.trust(code,issuer,function(response){
 
 
 ` signXDR(data, message, callback)`
-`signXDR`是一个底层方法。当Firefly提供的API无法直接满足需求时，可以使用此方法进行高级操作。
+`signXDR`是一个底层方法。当qlchain提供的API无法直接满足需求时，可以使用此方法进行高级操作。
 使用前提：需要了解恒星底层SDK，能够手工构造Transaction封包。当构造并生成XDR格式的tranaction后，可以提请用户对Tx进行签名，签名后提交到网络。
 参数说明：
 `data` 字符串，构造的XDR格式的transaction。
@@ -348,7 +348,7 @@ window.FFW.trust(code,issuer,function(response){
 
 ```
 var xdr = 'AAAAAEpng8wi7nIqz02/1bmC4I5jzz763WoadKIWy7M5MVc3AAAAZACHjkkAAAABAAAAAAAAAAAAAAABAAAAAAAAAAoAAAALaG9tZV9kb21haW4AAAAAAQAAABBodHRwOi8vZmNoYWluLmlvAAAAAAAAAAA='
- window.FFW.signXDR(xdr, "更新主域名", function(response){
+ window.qlchain.signXDR(xdr, "更新主域名", function(response){
   if(response.code === 'fail'){
     console.log('error:' + response.message)  
     alert('签名失败！'+response.message)
@@ -380,7 +380,7 @@ var xdr = 'AAAAAEpng8wi7nIqz02/1bmC4I5jzz763WoadKIWy7M5MVc3AAAAZACHjkkAAAABAAAAA
 代码示例
 
 ```
-window.FFW.scan(function(response){
+window.qlchain.scan(function(response){
   if(response.code === 'fail'){
     console.log('error:' + response.message)  
   }else{
@@ -422,7 +422,7 @@ let options = {
    message: '分享图片',
    files: ['data:image/png;base64,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']
 }
-window.FFW.share(options,function(response){
+window.qlchain.share(options,function(response){
   if(response.code === 'fail'){
     console.log('error:' + response.message)  
   }else{
