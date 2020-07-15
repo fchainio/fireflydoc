@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Example | qlchain Doc</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="qlchain runtime doc website">
+    <link rel="preload" href="/qlchaindoc/assets/css/0.styles.144ed768.css" as="style"><link rel="preload" href="/qlchaindoc/assets/js/app.e78bed55.js" as="script"><link rel="preload" href="/qlchaindoc/assets/js/2.0334ab6d.js" as="script"><link rel="preload" href="/qlchaindoc/assets/js/9.eeb329f5.js" as="script"><link rel="prefetch" href="/qlchaindoc/assets/js/10.d761771a.js"><link rel="prefetch" href="/qlchaindoc/assets/js/11.73fa18ee.js"><link rel="prefetch" href="/qlchaindoc/assets/js/12.472f06b1.js"><link rel="prefetch" href="/qlchaindoc/assets/js/13.fab64bee.js"><link rel="prefetch" href="/qlchaindoc/assets/js/14.ca188ba9.js"><link rel="prefetch" href="/qlchaindoc/assets/js/15.c92c8576.js"><link rel="prefetch" href="/qlchaindoc/assets/js/16.d68a3e85.js"><link rel="prefetch" href="/qlchaindoc/assets/js/17.59290676.js"><link rel="prefetch" href="/qlchaindoc/assets/js/3.3ae9385c.js"><link rel="prefetch" href="/qlchaindoc/assets/js/4.7d5f245c.js"><link rel="prefetch" href="/qlchaindoc/assets/js/5.cade5d09.js"><link rel="prefetch" href="/qlchaindoc/assets/js/6.9f67a969.js"><link rel="prefetch" href="/qlchaindoc/assets/js/7.15026856.js"><link rel="prefetch" href="/qlchaindoc/assets/js/8.22bf1354.js">
+    <link rel="stylesheet" href="/qlchaindoc/assets/css/0.styles.144ed768.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/qlchaindoc/en/" class="home-link router-link-active"><!----> <span class="site-name">qlchain Doc</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/qlchaindoc/en/guide/" class="nav-link router-link-active">
+  Guide
+</a></div><div class="nav-item"><a href="/qlchaindoc/en/jsapi/" class="nav-link">
+  JS API
+</a></div><div class="nav-item"><a href="/qlchaindoc/en/urlschema/" class="nav-link">
+  URL Schema
+</a></div><div class="nav-item"><a href="/qlchaindoc/en/stellar/" class="nav-link">
+  Stellar
+</a></div><div class="nav-item"><a href="https://stellarcn.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Stellar Official
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/qlchaindoc/guide/example.html" class="nav-link">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/qlchaindoc/en/guide/example.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li></ul></div></div> <a href="https://github.com/qlchain/doc" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/qlchaindoc/en/guide/" class="nav-link router-link-active">
+  Guide
+</a></div><div class="nav-item"><a href="/qlchaindoc/en/jsapi/" class="nav-link">
+  JS API
+</a></div><div class="nav-item"><a href="/qlchaindoc/en/urlschema/" class="nav-link">
+  URL Schema
+</a></div><div class="nav-item"><a href="/qlchaindoc/en/stellar/" class="nav-link">
+  Stellar
+</a></div><div class="nav-item"><a href="https://stellarcn.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Stellar Official
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/qlchaindoc/guide/example.html" class="nav-link">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/qlchaindoc/en/guide/example.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li></ul></div></div> <a href="https://github.com/qlchain/doc" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Guide</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/qlchaindoc/en/guide/" aria-current="page" class="sidebar-link">Introduction</a></li><li><a href="/qlchaindoc/en/guide/example.html" aria-current="page" class="active sidebar-link">Example</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#example" class="sidebar-link">Example</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#enable-dev-mode" class="sidebar-link">Enable dev mode</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#debug-using-qlchain-runtime" class="sidebar-link">Debug using qlchain runtime</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#debug-using-desktop-device" class="sidebar-link">Debug using desktop device</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#acquire-version-info-about-runtime" class="sidebar-link">Acquire version info about runtime</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#acquire-platform-info-of-runtime-os" class="sidebar-link">Acquire platform info of runtime OS</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#acquire-uuid-of-current-device" class="sidebar-link">Acquire UUID of current device</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#acquire-the-locale-of-runtime" class="sidebar-link">Acquire the locale of runtime</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#acquire-user-address-id" class="sidebar-link">Acquire user address(ID)</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#acquire-user-accountname" class="sidebar-link">Acquire user accountName</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#acquire-user-horizon-server-path" class="sidebar-link">Acquire user horizon server path</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#acquire-network-passphrase" class="sidebar-link">Acquire network passphrase</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#acquire-user-balance" class="sidebar-link">Acquire user balance</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#payment" class="sidebar-link">Payment</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#pathpayment" class="sidebar-link">Pathpayment</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#using-secret-key-of-current-user-to-sign" class="sidebar-link">Using secret key of current user to sign</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#validate-signature" class="sidebar-link">Validate signature</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#let-user-trust-asset" class="sidebar-link">Let user trust asset</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#ask-user-to-sign-xdr" class="sidebar-link">Ask user to sign XDR</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#qr-scan" class="sidebar-link">QR Scan</a></li><li class="sidebar-sub-header"><a href="/qlchaindoc/en/guide/example.html#social-share" class="sidebar-link">Social share</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="example"><a href="#example" class="header-anchor">#</a> Example</h2> <p>You have to open below link in qlchain runtime.
+https://t.cn/Re3xw6q
+How to add: Choose 『Discovery』 in qlchain runtime, click the icon at the top right-hand corner, then click 『+』, input name and paste link above to make addition done. Return to 『Discovery』 to click the new added DAPP to open it.
+Source code is <a href="https://github.com/fchainio/qlchain-examples/tree/master/dapp" target="_blank" rel="noopener noreferrer">here<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>If your project based on <code>nodejs</code>, you can install official library called <a href="https://github.com/fchainio/qlchainruntime-api" target="_blank" rel="noopener noreferrer">qlchainruntime-api<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>, and the reference exmaple project is [an example of vue project] (https://github.com/fchainio/qlchain-examples/tree/master/dapp/vue_demo).</p> <p>qlchain Object will be injected when you open the page in qlchain runtime, so you may know if this page is opend in runtime or not by checking the existence of windows.qlchain object.</p> <h2 id="enable-dev-mode"><a href="#enable-dev-mode" class="header-anchor">#</a> Enable dev mode</h2> <p>Dev mode is not active by default, to activate it, click &quot;My&quot; - &quot;Settings&quot; - &quot;About&quot;, click the qlchain icon multiple times.</p> <h2 id="debug-using-qlchain-runtime"><a href="#debug-using-qlchain-runtime" class="header-anchor">#</a> Debug using qlchain runtime</h2> <p>Open 『Discovery』 page in qlchain runtime, click 『+』 at the top right-hand corner, input DAPP name and access link, then the new added DAPP is visible under &quot;Custom Application&quot; column. You can click the icon to open it.</p> <h2 id="debug-using-desktop-device"><a href="#debug-using-desktop-device" class="header-anchor">#</a> Debug using desktop device</h2> <p>qlchain desktop version provides the same function with the mobile version, but with more convenient way to debug. You can test all APIs except some only available to mobile devices, like: scanning, sharing, etc.
+How to:
+Click 『Discovery』 in navigation bar, click add button in &quot;Custom Applications&quot;, put in name and application access link then save.
+Click the new added DAPP, <code>Chrome developer tools</code> will pop up.</p> <h2 id="acquire-version-info-about-runtime"><a href="#acquire-version-info-about-runtime" class="header-anchor">#</a> Acquire version info about runtime</h2> <p>Return current version info of qlchain runtime, String type, like: '2.1.8'.</p> <div class="language- extra-class"><pre class="language-text"><code>  window.qlchain.version    
+</code></pre></div><p>Value returned</p> <div class="language- extra-class"><pre class="language-text"><code>'2.1.8'
+</code></pre></div><h2 id="acquire-platform-info-of-runtime-os"><a href="#acquire-platform-info-of-runtime-os" class="header-anchor">#</a> Acquire platform info of runtime OS</h2> <p>Return the OS info of the device on which runtime rest, String type, like: Android or iOS.</p> <div class="language- extra-class"><pre class="language-text"><code>window.qlchain.platform
+</code></pre></div><p>Value returned</p> <div class="language- extra-class"><pre class="language-text"><code>'android'
+</code></pre></div><h2 id="acquire-uuid-of-current-device"><a href="#acquire-uuid-of-current-device" class="header-anchor">#</a> Acquire UUID of current device</h2> <p>Return the UUID of current device(data after SHA256 operation), String type.</p> <div class="language- extra-class"><pre class="language-text"><code>window.qlchain.uuid
+</code></pre></div><p>Value returned</p> <div class="language- extra-class"><pre class="language-text"><code>'01a0865f4c2687d90f70f32b01c1e258bfd7aa6c7ccc35339dfacd72f5018bb8'
+</code></pre></div><h2 id="acquire-the-locale-of-runtime"><a href="#acquire-the-locale-of-runtime" class="header-anchor">#</a> Acquire the locale of runtime</h2> <p>Return the locale value of current runtime, String type.</p> <div class="language- extra-class"><pre class="language-text"><code>window.qlchain.locale
+</code></pre></div><p>Value returned</p> <div class="language- extra-class"><pre class="language-text"><code>'zh_cn'
+</code></pre></div><h2 id="acquire-user-address-id"><a href="#acquire-user-address-id" class="header-anchor">#</a> Acquire user address(ID)</h2> <p>Return current user address, String type, like: <code>GCENG5GLJ35GPJZQM3YJSFL3GMQ57MA5U6ZAAE6V4XIFVXFPY5MS5Q65</code>.</p> <div class="language- extra-class"><pre class="language-text"><code>window.qlchain.address
+</code></pre></div><p>Value returned</p> <div class="language- extra-class"><pre class="language-text"><code>'GCENG5GLJ35GPJZQM3YJSFL3GMQ57MA5U6ZAAE6V4XIFVXFPY5MS5Q65'
+</code></pre></div><h2 id="acquire-user-accountname"><a href="#acquire-user-accountname" class="header-anchor">#</a> Acquire user accountName</h2> <p>Return current user accountName, String type, like: <code>qlchain Goose</code></p> <div class="language- extra-class"><pre class="language-text"><code>window.qlchain.accountName
+</code></pre></div><p>Value returned</p> <div class="language- extra-class"><pre class="language-text"><code>'qlchain Goose'
+</code></pre></div><h2 id="acquire-user-horizon-server-path"><a href="#acquire-user-horizon-server-path" class="header-anchor">#</a> Acquire user horizon server path</h2> <p>Return user horizon server path, String type, like: <code>https://horizon.stellar.org</code></p> <div class="language- extra-class"><pre class="language-text"><code>window.qlchain.horizonUrl
+</code></pre></div><p>Value returned</p> <div class="language- extra-class"><pre class="language-text"><code>'https://horizon.stellar.org'
+</code></pre></div><h2 id="acquire-network-passphrase"><a href="#acquire-network-passphrase" class="header-anchor">#</a> Acquire network passphrase</h2> <p>Return network passphrase of user horizon</p> <div class="language- extra-class"><pre class="language-text"><code>window.qlchain.network
+</code></pre></div><p>Value returned</p> <div class="language- extra-class"><pre class="language-text"><code>'Public Global Stellar Network ; September 2015'
+</code></pre></div><h2 id="acquire-user-balance"><a href="#acquire-user-balance" class="header-anchor">#</a> Acquire user balance</h2> <p>Return the balance info of current user. <code>balances(callback)</code>
+You can issuer assets on Stellar network, so one user may have lots of different assets. You can get all assets info one user holds with this method.
+This method get balance info from the horizon runtime appointed, and return.</p> <ul><li>Parameters description:</li> <li><code>callback</code> is the callback function after balance method gets executed, which could be a function name or a function.</li> <li>https://www.stellar.org/developers/horizon/reference/endpoints/accounts-single.html</li> <li>After execution of balance is done, <code>callback</code> will welcome a object, content like below:</li></ul> <div class="language-javascript extra-class"><pre class="language-javascript"><code>    <span class="token punctuation">{</span>
+        code<span class="token operator">:</span> <span class="token string">'success | fail'</span><span class="token punctuation">,</span>     <span class="token comment">//success, assets info query ok; fail, assets info query fail.</span>
+        message<span class="token operator">:</span> <span class="token string">'notification info | error info'</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>     <span class="token comment">//Array type. Content is assets info of current user.</span>
+     <span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>Code sample</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>window.qlchain.balances(function(response){
+        if(response.code === 'fail'){
+             console.log('error:' + response.message)  
+             alert('Assets info query fail! '+response.message)
+        }else{
+             console.log('query for balances successfully')
+             $(&quot;#balances_data&quot;).text(JSON.stringify(response.data))
+             alert('Assets info query OK!')
+        }
+});
+</code></pre></div><p>Value returned</p> <div class="language- extra-class"><pre class="language-text"><code>[
+    {
+      &quot;balance&quot;: &quot;1.0000000&quot;,       //asset balance
+      &quot;limit&quot;: &quot;707382697076.8900000&quot;,  //upper limit of one asset that one user could hold
+      &quot;asset_type&quot;: &quot;credit_alphanum4&quot;,   //Type of asset, credit_alphanum4 or credit_alphanum12.
+      &quot;asset_code&quot;: &quot;XFF&quot;,        //code of the asset
+      &quot;asset_issuer&quot;: &quot;GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF&quot;   //issuer of the asset
+    },
+    {
+      &quot;balance&quot;: &quot;1.9999900&quot;,   //balance
+      &quot;asset_type&quot;: &quot;native&quot;       //native means native asset of Stellar network, XLM
+    }
+]
+</code></pre></div><h2 id="payment"><a href="#payment" class="header-anchor">#</a> Payment</h2> <p><code>pay(data, callback)</code>
+You can pay specified amount of asset to other user with this method.
+Parameters description:
+<code>data</code> is a JSON, contents need to be like below:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>   <span class="token punctuation">{</span>
+    destination<span class="token operator">:</span> <span class="token string">'reciever address'</span><span class="token punctuation">,</span>  <span class="token comment">//string, required</span>
+    code<span class="token operator">:</span> <span class="token string">'asset code'</span><span class="token punctuation">,</span>           <span class="token comment">//string, required</span>
+    issuer<span class="token operator">:</span> <span class="token string">'asset issuer'</span><span class="token punctuation">,</span>     <span class="token comment">//string, can only skip if sending XLM</span>
+    amount<span class="token operator">:</span> <span class="token string">'amount to send'</span><span class="token punctuation">,</span> <span class="token comment">// number, required</span>
+    memo_type<span class="token operator">:</span> <span class="token string">'type of memo'</span><span class="token punctuation">,</span> <span class="token comment">//string, optional, enum choices: NONE TEXT HASH ID RETURN</span>
+    memo<span class="token operator">:</span> <span class="token string">'memo content'</span>   <span class="token comment">//string, optional, can only skip if memo_type is NONE, otherwise input corresponding value according to memo_type</span>
+   <span class="token punctuation">}</span>
+</code></pre></div><p>About the concept about <code>code</code> and <code>issuer</code>, you may refer to <a href="https://www.stellar.org/developers/guides/concepts/assets.html" target="_blank" rel="noopener noreferrer">stellar official document<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>, <a href="https://docs.stellarcn.org/developers/guides/concepts/assets.html" target="_blank" rel="noopener noreferrer">Chinese version<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>
+About the concept about <code>memo</code> and <code>memo_type</code>, you may refer to <a href="https://www.stellar.org/developers/guides/concepts/transactions.html#memo" target="_blank" rel="noopener noreferrer">here<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>, later we will give an explain in plain english.
+<code>callback</code> is the callback function after payment gets executed, which could be a function name or a function.
+After payment execution gets done, <code>callback</code> will welcome an object, content like below:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>    <span class="token punctuation">{</span>
+        code<span class="token operator">:</span> <span class="token string">'success | fail'</span><span class="token punctuation">,</span>     <span class="token comment">//success, payment ok; fail, payment fail</span>
+        message<span class="token operator">:</span> <span class="token string">'notification info | error info'</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> <span class="token string">'result data returned'</span>     <span class="token comment">//object or null</span>
+     <span class="token punctuation">}</span>
+</code></pre></div><p>Code sample</p> <div class="language- extra-class"><pre class="language-text"><code>window.qlchain.pay({
+         destination: 'GBFGPA6MELXHEKWPJW75LOMC4CHGHTZ67LOWUGTUUILMXMZZGFLTO3X7', 
+         code: 'XFF', 
+         issuer: 'GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF', 
+         amount: 1, 
+         memo_type: 'TEXT',  
+         memo: 'Hello,qlchain'
+       }, function(response){
+           if(response.code === 'fail'){
+             console.log('error:' + response.message)  
+             alert('Payment failed! '+response.message)
+           }else{
+             console.log('pay success')
+             alert('Payment ok!')
+             //your business code goes here
+           }
+});
+</code></pre></div><p><img src="https://static.oschina.net/uploads/space/2018/0806/162145_Uid5_109284.png" alt="calling interface"></p> <h2 id="pathpayment"><a href="#pathpayment" class="header-anchor">#</a> Pathpayment</h2> <p>WIP...</p> <h2 id="using-secret-key-of-current-user-to-sign"><a href="#using-secret-key-of-current-user-to-sign" class="header-anchor">#</a> Using secret key of current user to sign</h2> <p><code>sign(data, callback)</code>
+You may use this method to sign your data, which will be verified. Scenarios include: Application will get user identity by verifying the data signed by the same user, then may allow user to login application.
+Paramenters description:
+<code>data</code> is a string of JSON format. The length limit of data (WIP)
+<code>callback</code> is the callback function after sign gets executed, which could be a function name or function.
+After <code>sign</code> execution gets done, <code>callback</code> will welcome an object, content like below:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>    <span class="token punctuation">{</span>
+        code<span class="token operator">:</span> <span class="token string">'success | fail'</span><span class="token punctuation">,</span>     <span class="token comment">//success, means sign ok; fail, means sign failed</span>
+        message<span class="token operator">:</span> <span class="token string">'notification info | error info'</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> <span class="token string">'result data returned'</span>     <span class="token comment">//base64 encode string or null</span>
+     <span class="token punctuation">}</span>
+</code></pre></div><p>Code sample</p> <div class="language- extra-class"><pre class="language-text"><code>let data = {name: 'qlchain runtime dapp',desc:'the first hello in the world'}
+data = JSON.stringify(data)
+console.log('The data to sign:' +data)
+window.qlchain.sign(data, function(response){
+    if(response.code === 'fail'){
+        console.log('error:' + response.message)  
+    }else{
+        console.log('success')
+        console.log('The result data after signing: '+response.data)
+    }
+})
+</code></pre></div><p>Value returned</p> <div class="language- extra-class"><pre class="language-text"><code>The data to sign:{&quot;time&quot;:1533626528508,&quot;address&quot;:&quot;GACJFMOXTSE7QOL5HNYI2NIAQ4RDHZTGD6FNYK4P5THDVNWIKQDGOODU&quot;}
+The result data after signing:4foYmY0Nrx1QPT5CfJEsJcYM0o40l4sHDo8aHJ0mHNq0ZY9Q7753FieHXBK3dJJ32+Lhw3UIJnzF2pplyo3LBg==
+
+</code></pre></div><h2 id="validate-signature"><a href="#validate-signature" class="header-anchor">#</a> Validate signature</h2> <p>WIP...</p> <h2 id="let-user-trust-asset"><a href="#let-user-trust-asset" class="header-anchor">#</a> Let user trust asset</h2> <p><code>trust(code, issuer, callback)</code>
+User may trust specified asset with this method.
+Parameters description:
+<code>code</code> is string, whose content should be alphanumeric code, a.k.a [a-z][A-Z][0-9]. Lenght is 1-12 characters.
+<code>issuer</code> is string, whose content is stellar address, like: <code>GCKKUWHT3ILQWWKQ3MUOCAC7LRJNLCOES7SEI6TCQVGZD4GCULO2PGNU</code>.
+<code>callback</code> is the callback function after trust gets executed, which could be a function name or function.
+After <code>trust</code> execution gets done, <code>callback</code> will be expecting an object, content like below:</p> <p>Code sample</p> <div class="language- extra-class"><pre class="language-text"><code>var code = 'XFF';
+var issuer = 'GAZEX2USUBMMWFRZFS77VDJYXUFLXI4ZGFPWX6TBNZCSTEQWNLFZMXFF';
+window.qlchain.trust(code,issuer,function(response){
+   if(response.code === 'fail'){
+    console.log('error:' + response.message)  
+       alert('Trust failed')
+    }else{
+       console.log('trust success')
+       alert('Trust OK')
+    }
+})
+</code></pre></div><p><img src="https://static.oschina.net/uploads/space/2018/0808/003018_3Kcb_109284.png" alt="calling interface"></p> <h2 id="ask-user-to-sign-xdr"><a href="#ask-user-to-sign-xdr" class="header-anchor">#</a> Ask user to sign XDR</h2> <p><code>signXDR(data, message, callback)</code> <code>signXDR</code> is a underlying method. You may perform advanced operation if API provided by qlchain runtime can not meet your requirement.
+Prerequisite: You have to understand the underlying SDK of Stellar, which requires you to be able to create a Transaction package manually. You would have to sign the Transaction which you created in XDR format, then submit it to horizon.
+Parameters description:
+<code>data</code> is string, the Transaction you created in XDR format.
+<s><code>message</code> is string, used to tell others the usage of this Transaction.</s> <code>callback</code> is the callback function after signXDR gets executed, which could be a function name or function.</p> <p>After <code>signXDR</code> execution gets done, <code>callback</code> will be expecting an object, content like below:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>    <span class="token punctuation">{</span>
+        code<span class="token operator">:</span>  <span class="token string">'success | fail'</span><span class="token punctuation">,</span>     <span class="token comment">//success, means signXDR ok; fail, means signXDR failed</span>
+        message<span class="token operator">:</span><span class="token string">'notification info | error info'</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span><span class="token string">'Result data returned'</span>     <span class="token comment">//base64 encoded string or null</span>
+     <span class="token punctuation">}</span>
+</code></pre></div><p>Code sample</p> <div class="language- extra-class"><pre class="language-text"><code>var xdr = 'AAAAAEpng8wi7nIqz02/1bmC4I5jzz763WoadKIWy7M5MVc3AAAAZACHjkkAAAABAAAAAAAAAAAAAAABAAAAAAAAAAoAAAALaG9tZV9kb21haW4AAAAAAQAAABBodHRwOi8vZmNoYWluLmlvAAAAAAAAAAA='
+ window.qlchain.signXDR(xdr, &quot;update domain name&quot;, function(response){
+  if(response.code === 'fail'){
+    console.log('error:' + response.message)  
+    alert('signXDR Failed!'+response.message)
+  }else{
+    console.log('signXDR OK, you can submit data to Horizon now!')
+    console.log(response.data)
+  }
+})
+</code></pre></div><p><img src="https://static.oschina.net/uploads/space/2018/0808/005124_ty0v_109284.png" alt="calling interface"></p> <h2 id="qr-scan"><a href="#qr-scan" class="header-anchor">#</a> QR Scan</h2> <p><code>scan(callback)</code>
+You can scan QR code and get the result with this method.
+Parameters description:
+<code>callback</code> is the callback function after scan gets executed, which could be a function name or function.
+After <code>scan</code> execution gets done, <code>callback</code> will be expecting an object, content like below:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>    <span class="token punctuation">{</span>
+        code<span class="token operator">:</span>  <span class="token string">'success | fail'</span><span class="token punctuation">,</span>     <span class="token comment">//success, means scan ok; fail, means scan failed</span>
+        message<span class="token operator">:</span><span class="token string">'notification info | error info'</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span><span class="token string">'result data returned'</span>     <span class="token comment">//string or null</span>
+     <span class="token punctuation">}</span>
+</code></pre></div><p>Code sample</p> <div class="language- extra-class"><pre class="language-text"><code>window.qlchain.scan(function(response){
+  if(response.code === 'fail'){
+    console.log('error:' + response.message)  
+  }else{
+     console.log('scan result:' + response.data)//response.data is the result of the scanned QR code, string
+  }
+ })
+  
+</code></pre></div><h2 id="social-share"><a href="#social-share" class="header-anchor">#</a> Social share</h2> <p><code>share(options,callback)</code>
+You can leverage share function of the device with this method. The implement is <a href="https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin" target="_blank" rel="noopener noreferrer">here<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><code>options</code> is a JSON, needs to have below content:</p> <p><code>share</code></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>   <span class="token punctuation">{</span>
+    message<span class="token operator">:</span> <span class="token string">'picture share'</span><span class="token punctuation">,</span>  <span class="token comment">//string, required</span>
+    url<span class="token operator">:</span> <span class="token string">'https://fchain.io'</span><span class="token punctuation">,</span><span class="token comment">//string, optional, the url you want to share</span>
+    files<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'picture content'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>           <span class="token comment">//Array, optional, supports remote picture urls or picture data in base64 format</span>
+   <span class="token punctuation">}</span>
+</code></pre></div><p><code>callback</code> is the callback function after share gets executed, which could be a function name or function.
+After <code>share</code> execution gets done, <code>callback</code> will be expecting an object, content like below:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>    <span class="token punctuation">{</span>
+        code<span class="token operator">:</span>  <span class="token string">'success | fail'</span><span class="token punctuation">,</span>     <span class="token comment">//success, means share ok; fail, means share failed</span>
+        message<span class="token operator">:</span><span class="token string">'notification info | error info'</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><p>Code sample</p> <div class="language- extra-class"><pre class="language-text"><code>let options = {
+   message: 'picture share',
+   files: ['data:image/png;base64,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']
+}
+window.qlchain.share(options,function(response){
+  if(response.code === 'fail'){
+    console.log('error:' + response.message)  
+  }else{
+    console.log('share success')
+  }
+})
+
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/qlchain/doc/edit/master/src/en/guide/example.md" target="_blank" rel="noopener noreferrer">Edit this page on GitHub</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">7/15/2020, 5:32:20 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/qlchaindoc/en/guide/" class="prev router-link-active">
+        Introduction
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/qlchaindoc/assets/js/app.e78bed55.js" defer></script><script src="/qlchaindoc/assets/js/2.0334ab6d.js" defer></script><script src="/qlchaindoc/assets/js/9.eeb329f5.js" defer></script>
+  </body>
+</html>
